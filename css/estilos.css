@@ -16,11 +16,16 @@
 
 * { box-sizing: border-box; }
 body {
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   color: var(--texto);
   background: var(--fondo);
   line-height: 1.5; transition: background-color 0.3s ease, color 0.3s ease;}
+/* Usamos Forum para los encabezados para crear una jerarquía visual atractiva */
+h1, h2, h3, h4 {
+  font-family: 'Forum', serif;
+  font-weight: 400; /* Forum no necesita negrita, su diseño es suficiente */
+}
 html {
   scroll-behavior: smooth; /* Habilita el scroll suave en toda la página */
 }
@@ -198,6 +203,7 @@ html {
 .btn:hover {
   background: var(--acento);
   border-color: var(--acento);
+  color: var(--marca); /* Cambiamos el color del texto para mejor contraste */
   transform: scale(1.05);
 }
 .features {
@@ -206,26 +212,30 @@ html {
   grid-template-columns: 1fr;
   padding: 3rem 0;
 }
-.features article {
+.features article,
+.service-card {
   /* Estilos combinados para las tarjetas de características */
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background-color: var(--superficie);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.features article h2, .features article p {
-  padding: 0 1.5rem;
-}
-.features article p {
+.features article p,
+.service-card p {
   padding-bottom: 1.5rem;
   flex-grow: 1; /* Asegura que el texto empuje el botón hacia abajo si lo hubiera */
 }
-.features article:hover {
+.features article:hover,
+.service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 20px var(--sombra);
+}
+.features article h2, .features article p,
+.service-card h2, .service-card p {
+  padding: 0 1.5rem;
 }
 .card-image {
   width: 100%;
@@ -297,10 +307,11 @@ html {
 }
 .footer-icon-link {
   color: var(--muted);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 .footer-icon-link:hover {
   color: var(--acento);
+  transform: translateY(-2px);
 }
 .page-header {
   text-align: center;
@@ -388,7 +399,8 @@ html {
   /* Al pasar el cursor, el color del enlace (y del ícono) cambiará */
   color: var(--acento);
   border-color: var(--acento);
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--sombra);
 }
 .map-location iframe {
   border-radius: var(--radio);
@@ -403,31 +415,6 @@ html {
   gap: 1.5rem;
   grid-template-columns: 1fr;
 }
-.service-card {
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  background-color: var(--superficie);
-  overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
-  display: flex;
-  flex-direction: column;
-  /* Transición para el efecto hover (elevación y sombra) */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.service-card:hover {
-  transform: translateY(-8px); /* Se eleva al pasar el cursor */
-  box-shadow: 0 6px 20px var(--sombra);
-}
-.service-card h2, .service-card p {
-  padding: 0 1.5rem;
-}
-.service-card p {
-  padding-bottom: 1.5rem;
-  flex-grow: 1;
-}
-/* Añadimos un retraso en la transición para las tarjetas de servicios */
-.services-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
-.services-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.4s; }
-
 /* Animaciones para la página de contacto */
 .contact-grid form {
   /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
@@ -677,7 +664,7 @@ html {
   .main-nav a.active,
   .main-nav a:hover {
     background-color: transparent; /* Sin fondo al pasar el cursor */
-    color: var(--acento); /* Cambiamos el color del texto a amarillo */
+    color: #a8b52a; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1) */
   }
   /* Nos aseguramos de que el overflow:hidden no afecte al escritorio */
   body.nav-open {
