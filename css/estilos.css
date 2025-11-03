@@ -16,15 +16,15 @@
 
 * { box-sizing: border-box; }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   color: var(--texto);
   background: var(--fondo);
   line-height: 1.5; transition: background-color 0.3s ease, color 0.3s ease;}
-/* Usamos Forum para los encabezados para crear una jerarquía visual atractiva */
+/* Usamos Poppins para los encabezados para un look moderno y limpio */
 h1, h2, h3, h4 {
-  font-family: 'Forum', serif;
-  font-weight: 400; /* Forum no necesita negrita, su diseño es suficiente */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Usamos semibold para un impacto visual moderno */
 }
 html {
   scroll-behavior: smooth; /* Habilita el scroll suave en toda la página */
