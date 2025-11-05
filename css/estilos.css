@@ -737,3 +737,33 @@ html {
 
 /* Helper de accesibilidad */
 :focus { outline: 3px solid #ffd59e; outline-offset: 2px; }
+.rin-wiki-layout {
+    grid-template-columns: 3fr 1fr; /* 3 partes para el texto, 1 para el infobox */
+  }
+}
+
+/* Estilos adicionales para la página de wiki de Rin */
+.rin-main-quote {
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.rin-toc-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rin-toc-toggle {
+  background: none;
+  border: none;
+  color: var(--marca);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.rin-toc-toggle:hover {
+  text-decoration: underline;
+}
