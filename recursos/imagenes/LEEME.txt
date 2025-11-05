@@ -1,0 +1,2 @@
+Carpeta para imágenes del sitio: logo.png, favicon.ico y otras imágenes.
+Reemplace con archivos reales cuando estén disponibles.

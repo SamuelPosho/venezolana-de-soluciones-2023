@@ -1,0 +1,739 @@
+/* Estilos básicos mobile-first (archivo en español) */
+
+:root {
+  --marca: #4a4a4a; /* Gris oscuro profesional */
+  --acento: #d1de3f; /* Amarillo/lima del logo */
+  --fondo: #f4f4f4; /* Gris claro para el fondo */
+  --texto: #222;
+  --muted: #777;
+  --superficie: #fff; /* Color para tarjetas, header, etc. */
+  --borde: #eee;
+  --sombra: rgba(0,0,0,0.1);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --max-ancho: 1100px;
+  --radio: 6px;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.5; transition: background-color 0.3s ease, color 0.3s ease;}
+/* Usamos Poppins para los encabezados para un look moderno y limpio */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Usamos semibold para un impacto visual moderno */
+}
+html {
+  scroll-behavior: smooth; /* Habilita el scroll suave en toda la página */
+}
+.container { max-width: var(--max-ancho); margin: 0 auto; padding: 1rem; }
+.site-header {
+  background: var(--header-bg); /* Fondo ligeramente traslúcido */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque para el contenido detrás */
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Asegura que el encabezado esté sobre el resto del contenido */
+}
+.site-header .container { display: flex; align-items: center; gap: 1rem; }
+.brand {
+  font-weight: 700;
+  color: var(--marca);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.brand:hover { opacity: 0.8; }
+.logo {
+  height: 48px; /* Ajusta esta altura según el tamaño de tu logo */
+  width: 48px;
+  vertical-align: middle; /* Alinea la imagen verticalmente con el texto de la navegación */
+}
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+  display: block; /* Visible por defecto en móvil */
+  background: none;
+  border: none;
+  cursor: pointer; 
+  padding: 0.5rem;
+  margin-left: auto; /* Empuja el botón a la derecha */
+  z-index: 1003; /* Asegura que esté sobre el menú */
+}
+
+.menu-toggle .hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--marca);
+  position: relative;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--marca);
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle .hamburger::before { top: -8px; }
+.menu-toggle .hamburger::after { bottom: -8px; }
+
+/* Ocultar navegación por defecto en móvil */
+.main-nav {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea los botones desde arriba */
+  align-items: stretch; /* Estira los botones para que ocupen todo el ancho */
+  gap: 1rem;
+  position: fixed;
+  top: 77px; /* Altura del header para posicionarse debajo */
+  right: 0;
+  width: auto;
+  height: auto; /* La altura se ajusta al contenido */
+  background: var(--superficie); /* Mantenemos el menú blanco */
+  z-index: 1002;
+  padding: 1rem;
+  box-shadow: -5px 0 15px var(--sombra);
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+.main-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  display: block;
+  font-size: 1.2rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radio);
+  width: 100%;  
+  /* Animación de entrada para cada enlace */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.main-nav a.active,
+.main-nav a:hover {
+  color: var(--marca);
+  background-color: var(--fondo);
+}
+.nav-open .main-nav a {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Retraso escalonado para la animación de los enlaces */
+.nav-open .main-nav a:nth-child(1) {
+  transition-delay: 0.15s;
+}
+.nav-open .main-nav a:nth-child(2) {
+  transition-delay: 0.25s;
+}
+.nav-open .main-nav a:nth-child(3) {
+  transition-delay: 0.35s;
+}
+/* Estilos cuando el menú está abierto (usando JS y la clase .nav-open) */
+.nav-open .main-nav {
+  display: flex; /* Hacemos visible el menú para que la animación funcione */
+  transform: translateX(0);
+}
+
+.nav-open .menu-toggle .hamburger {
+  background-color: transparent; /* La barra del medio desaparece */
+}
+
+.nav-open .menu-toggle .hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-open .menu-toggle .hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Ocultar el scroll del body cuando el menú está abierto */
+.nav-open {
+  overflow: hidden;
+}
+
+.hero {
+  padding: 5rem 0; /* Aumentamos el padding para más impacto visual */
+  /* Se añade una imagen de fondo con una capa oscura para legibilidad */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../recursos/imagenes/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Añade el efecto parallax */
+  color: #fff; /* Cambiamos el color del texto a blanco para que sea legible */
+  text-align: center; /* Centramos el contenido */
+  animation: fadeIn 1s ease-out;
+}
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Tamaño de fuente adaptable */
+  animation: slideInLeft 0.8s ease-out;
+}
+.hero p {
+  font-size: 1.2rem;  
+  max-width: 600px; /* Limitamos el ancho del párrafo para mejor lectura */
+  margin: 0 auto 1.5rem auto; /* Centramos el párrafo */
+  animation: slideInRight 0.8s ease-out; 
+}
+.hero-logo {
+  display: block;
+  margin: 1.5rem auto;
+  max-height: 240px;
+  width: auto;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+.btn {
+  display: inline-block;
+  background: var(--marca);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--marca);
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--marca); /* Cambiamos el color del texto para mejor contraste */
+  transform: scale(1.05);
+}
+.features {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  padding: 3rem 0;
+}
+.features article,
+.service-card {
+  /* Estilos combinados para las tarjetas de características */
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background-color: var(--superficie);
+  overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.features article p,
+.service-card p {
+  padding-bottom: 1.5rem;
+  flex-grow: 1; /* Asegura que el texto empuje el botón hacia abajo si lo hubiera */
+}
+.features article:hover,
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px var(--sombra);
+}
+.features article h2, .features article p,
+.service-card h2, .service-card p {
+  padding: 0 1.5rem;
+}
+.card-image {
+  width: 100%;
+  height: 250px; /* Altura fija para todas las imágenes de las tarjetas */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  margin-bottom: 1.5rem;
+}
+.about {
+  padding: 2rem 0;
+}
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio);
+  margin-top: 1rem;
+}
+.about-text h2 {
+  margin-top: 0;
+}
+
+.clients {
+  padding: 3rem 0;
+  text-align: center;
+}
+.clients-header {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+.client-logo {
+  padding: 1rem;
+}
+.client-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.client-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.site-footer {
+  border-top: 1px solid var(--borde);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 2rem;
+}
+.site-footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.footer-links {
+  display: flex;
+}
+.footer-icon-link {
+  color: var(--muted);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-icon-link:hover {
+  color: var(--acento);
+  transform: translateY(-2px);
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.page-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-page form { 
+  max-width: 640px;
+  margin-bottom: 2rem; 
+}
+.contact-page label { display: block; margin-top: 1rem; }
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-page input:focus,
+.contact-page textarea:focus {
+  border-color: var(--marca);
+  box-shadow: 0 0 5px rgba(30, 102, 163, 0.3);
+}
+.contact-page .btn {
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.contact-page .btn:hover {
+  background: var(--acento);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.form-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+.contact-details {
+  background-color: var(--fondo);
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+}
+.contact-details h2 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--acento);
+  padding-bottom: 0.5rem;
+}
+.social-links {
+  margin-top: 1.5rem;
+}
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  text-decoration: none;
+  color: var(--muted);
+  transition: all 0.3s ease;
+}
+.social-links a svg {
+  /* El color del ícono será el mismo que el del texto del enlace */
+  stroke: currentColor;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  /* Al pasar el cursor, el color del enlace (y del ícono) cambiará */
+  color: var(--acento);
+  border-color: var(--acento);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--sombra);
+}
+.map-location iframe {
+  border-radius: var(--radio);
+  margin-top: 1rem;
+  width: 100%;
+  height: 300px;
+}
+
+/* Estilos para la página de servicios */
+.services-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+/* Animaciones para la página de contacto */
+.contact-grid form {
+  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.contact-grid .contact-details {
+  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards; /* Se anima un poco después del formulario */
+}
+
+/* Animación para la página "Quiénes somos" */
+.about-us-content {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+/* Estilos para la página "Quiénes somos" */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.mission-card, .vision-card {
+  padding: 2rem;
+  border-radius: var(--radio);
+  background-color: var(--superficie);
+  border-left: 5px solid var(--acento);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mission-card h3, .vision-card h3 {
+  margin-top: 0;
+  color: var(--marca);
+}
+.mission-card:hover, .vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--sombra);
+}
+
+.values-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-title {
+  margin-bottom: 2rem;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.value-card {
+  background-color: var(--superficie);
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px var(--sombra);
+}
+.value-icon {
+  margin-bottom: 1rem;
+}
+.value-card:hover .value-icon img {
+  transform: scale(1.1) rotate(5deg);
+}
+.value-icon img {
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0.5rem;
+  border: 2px solid var(--borde);
+  transition: transform 0.3s ease;
+}
+.value-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--marca);
+}
+.value-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Retrasos de animación para los valores */
+.values-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.values-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.values-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+
+/* En móvil, la imagen de la historia va primero */
+.history-section .about-image {
+  order: -1;
+}
+
+.history-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para la sección de llamada a la acción (CTA) */
+.cta-section {
+  background-color: var(--superficie);
+  border-radius: var(--radio);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  border: 1px solid var(--borde);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta-content h2 {
+  margin-top: 0;
+  color: var(--marca);
+}
+.cta-content p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+.history-section:hover, .cta-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--sombra);
+}
+
+/* Estilos para el botón "Volver Arriba" */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--marca);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background-color: var(--acento);
+}
+
+/* Animaciones */
+/* Estilos para la animación de scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.animate-left {
+  transform: translateX(-30px);
+}
+.animate-on-scroll.animate-right {
+  transform: translateX(30px);
+}
+.animate-on-scroll.is-visible.animate-left,
+.animate-on-scroll.is-visible.animate-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0); 
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+}
+/* Añadimos un retraso en la transición para las tarjetas de características */
+.features .animate-on-scroll:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.features .animate-on-scroll:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.client-logos .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.client-logos .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.client-logos .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.client-logos .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.client-logos .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+.client-logos .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsividad */
+@media (min-width: 700px) {
+  /* Ocultar el botón de hamburguesa en escritorio */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Restaurar estilos de navegación para escritorio */
+  .main-nav {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    backdrop-filter: none;
+    margin-left: auto;
+    box-shadow: none; /* Eliminamos la sombra del menú móvil */
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0; /* Reseteamos el padding del menú móvil */
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .main-nav a {
+    font-size: 1rem;
+    padding: 0; /* Eliminamos el padding para que sea solo texto */
+    border-radius: 0;
+    color: var(--muted);
+    font-weight: normal;
+    background-color: transparent; /* Aseguramos que no tenga fondo */
+    /* Restauramos la opacidad y transformación para la vista de escritorio */
+    opacity: 1;
+    transform: none;
+    transition: color 0.3s ease; /* Mantenemos solo la transición de color */
+  }
+  .main-nav a.active,
+  .main-nav a:hover {
+    background-color: transparent; /* Sin fondo al pasar el cursor */
+    color: #a8b52a; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1) */
+  }
+  /* Nos aseguramos de que el overflow:hidden no afecte al escritorio */
+  body.nav-open {
+    overflow: auto;
+  }
+
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+  }
+  .client-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  /* Sobrescribimos las animaciones para escritorio para un efecto lateral */
+  .contact-grid form {
+    animation-name: slideInLeft;
+  }
+  .contact-grid .contact-details {
+    animation-name: slideInRight;
+  }
+  .mission-vision-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* En escritorio, restauramos el orden por defecto */
+  .history-section .about-image {
+    order: 0;
+  }
+}
+
+/* Respetar preferencias de animación reducida */
+@media (prefers-reduced-motion: reduce) {
+  .brand,
+  .main-nav a,
+  .btn,
+  .contact-page input,
+  .contact-page textarea,
+  .contact-page .btn,
+  .hero,
+  .hero h1,
+  .hero p,
+  .features article,
+  .about,
+  .site-footer, .animate-on-scroll {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Helper de accesibilidad */
+:focus { outline: 3px solid #ffd59e; outline-offset: 2px; }
