@@ -88,7 +88,7 @@ html {
 
 /* Ocultar navegación por defecto en móvil */
 .main-nav {
-  display: none;
+  visibility: hidden; /* Usamos visibility en lugar de display para permitir la animación */
   flex-direction: column;
   justify-content: flex-start; /* Alinea los botones desde arriba */
   align-items: stretch; /* Estira los botones para que ocupen todo el ancho */
@@ -103,7 +103,7 @@ html {
   padding: 1rem;
   box-shadow: -5px 0 15px var(--sombra);
   transform: translateX(100%);
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, visibility 0.4s ease;
 }
 .main-nav a {
   color: var(--muted);
@@ -139,7 +139,8 @@ html {
 }
 /* Estilos cuando el menú está abierto (usando JS y la clase .nav-open) */
 .nav-open .main-nav {
-  display: flex; /* Hacemos visible el menú para que la animación funcione */
+  display: flex;
+  visibility: visible; /* Hacemos visible el menú para que la animación funcione */
   transform: translateX(0);
 }
 
@@ -603,6 +604,7 @@ html {
 
   /* Restaurar estilos de navegación para escritorio */
   .main-nav {
+    visibility: visible; /* Aseguramos que el menú sea visible en escritorio */
     display: flex;
     position: static;
     width: auto;
