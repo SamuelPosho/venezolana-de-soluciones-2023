@@ -285,6 +285,10 @@ html {
   color: var(--acento);
   transform: translateY(-2px);
 }
+.footer-icon-link.boton-secreto:hover {
+  transform: rotate(15deg) scale(1.1); /* Rotación y escala para un efecto divertido */
+  color: var(--acento); /* Asegura que el color de acento se aplique */
+}
 .page-header {
   text-align: center;
   margin-bottom: 2rem;

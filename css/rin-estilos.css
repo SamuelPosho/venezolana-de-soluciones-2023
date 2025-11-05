@@ -129,10 +129,19 @@ h1, h2 {
 }
 
 .grid-galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex; /* Cambia a flexbox para disposición horizontal */
+  overflow-x: auto; /* Permite el scroll horizontal */
+  white-space: nowrap; /* Evita que los elementos se envuelvan */
   gap: 1rem;
   margin-top: 1.5rem;
+  padding-bottom: 1rem; /* Espacio para la barra de scroll */
+  align-items: flex-end; /* Alinea las imágenes a la base, como libros en una estantería */
+  /* Estilos para la barra de scroll (opcional, para personalizar) */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--rin-acento) var(--rin-borde); /* Firefox */
+}
+.grid-galeria::-webkit-scrollbar {
+  height: 8px;
 }
 
 .item-galeria {
@@ -143,6 +152,12 @@ h1, h2 {
   border: 1px solid var(--rin-borde);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0; /* Evita que las imágenes se encojan */
+  height: 150px; /* Altura fija para las imágenes de la galería */
+  width: auto; /* Ancho automático para mantener la proporción */
+}
+.item-galeria.seleccionado {
+  border: 2px solid var(--rin-acento);
 }
 
 .item-galeria:hover {
