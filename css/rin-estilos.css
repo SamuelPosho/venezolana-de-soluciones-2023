@@ -1,0 +1,168 @@
+/* Estilos para la página autónoma de Rin Tezuka */
+
+:root {
+  --rin-fondo: #fdfbf7; /* Un blanco cálido, como papel de arte */
+  --rin-texto: #3d352a; /* Marrón oscuro para el texto */
+  --rin-encabezado: #6b4f3a; /* Un tono sepia para encabezados */
+  --rin-acento: #d1de3f; /* Acento lima, para un toque de color */
+  --rin-borde: #e0d7ca; /* Borde suave */
+  --rin-superficie: #f9f5f0; /* Superficie para el infobox */
+  --rin-sombra: rgba(0, 0, 0, 0.08);
+  --rin-radio: 4px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: var(--rin-fondo);
+  color: var(--rin-texto);
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--rin-encabezado);
+  font-weight: 600;
+}
+
+.contenedor-wiki {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.encabezado-wiki {
+  text-align: center;
+  border-bottom: 1px solid var(--rin-borde);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.cita-principal-wiki {
+  font-style: italic;
+  color: #777;
+  margin: 0;
+}
+
+/* Contenedor principal del artículo para manejar el float */
+.articulo-wiki::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.caja-info {
+  background-color: var(--rin-superficie);
+  border: 1px solid var(--rin-borde);
+  border-radius: var(--rin-radio);
+  padding: 0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.encabezado-caja-info {
+  background-color: #eaf3ff; /* Azul claro de wiki */
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #a2a9b1; /* Borde de wiki */
+  border-top-left-radius: var(--rin-radio);
+  border-top-right-radius: var(--rin-radio);
+}
+
+.contenedor-imagen-caja-info {
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.imagen-caja-info {
+  width: 100%;
+  height: auto;
+  border-radius: var(--rin-radio);
+  border: 1px solid var(--rin-borde);
+}
+
+.leyenda-caja-info {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.datos-caja-info {
+  padding: 0 1rem 1rem;
+}
+
+.subencabezado-caja-info {
+  background-color: #eaf3ff;
+  padding: 0.4rem 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 -1rem 1rem;
+}
+
+.fila-caja-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--rin-borde);
+}
+
+.fila-caja-info:last-child {
+  border-bottom: none;
+}
+
+.etiqueta-caja-info {
+  font-weight: 600;
+}
+
+.seccion-wiki h2 {
+  border-bottom: 2px solid var(--rin-acento);
+  padding-bottom: 0.5rem;
+}
+
+.seccion-galeria {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.item-galeria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--rin-radio);
+  border: 1px solid var(--rin-borde);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.item-galeria:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--rin-sombra);
+}
+
+.pie-pagina-wiki {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rin-borde);
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Media Query para pantallas más grandes */
+@media (min-width: 768px) {
+  .caja-info {
+    float: right;
+    width: 280px;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+}
