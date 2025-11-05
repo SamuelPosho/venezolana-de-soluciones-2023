@@ -1,0 +1,5 @@
+# Indica a todos los rastreadores que pueden acceder a todo el sitio.
+User-agent: *
+Disallow: 
+
+Sitemap: https://samuelposho.github.io/venezolana-de-soluciones-2023/sitemap.xml
