@@ -20,7 +20,10 @@ body {
   margin: 0;
   color: var(--texto);
   background: var(--fondo);
-  line-height: 1.5; transition: background-color 0.3s ease, color 0.3s ease;}
+  line-height: 1.5; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal en toda la página */
+}
 /* Usamos Poppins para los encabezados para un look moderno y limpio */
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
@@ -157,8 +160,8 @@ html {
 }
 
 /* Ocultar el scroll del body cuando el menú está abierto */
-.nav-open {
-  overflow: hidden;
+html.nav-open {
+  overflow: hidden; /* Se aplica a HTML para evitar problemas de zoom y layout */
 }
 
 .hero {
@@ -167,7 +170,7 @@ html {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../recursos/imagenes/hero-background.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Añade el efecto parallax */
+  background-attachment: scroll; /* Se cambia a scroll en móvil para evitar bugs al abrir el menú */
   color: #fff; /* Cambiamos el color del texto a blanco para que sea legible */
   text-align: center; /* Centramos el contenido */
   animation: fadeIn 1s ease-out;
@@ -638,8 +641,12 @@ html {
     color: #a8b52a; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1) */
   }
   /* Nos aseguramos de que el overflow:hidden no afecte al escritorio */
-  body.nav-open {
-    overflow: auto;
+  html.nav-open {
+    overflow: auto; /* Restauramos el scroll en escritorio */
+  }
+
+  .hero {
+    background-attachment: fixed; /* Restauramos el efecto parallax en escritorio */
   }
 
   .features {
