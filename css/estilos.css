@@ -21,7 +21,6 @@ body {
   color: var(--texto);
   background: var(--fondo);
   line-height: 1.5; 
-  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden; /* Evita el desbordamiento horizontal en toda la página */
 }
 /* Usamos Poppins para los encabezados para un look moderno y limpio */
@@ -165,6 +164,23 @@ html.nav-open {
   overflow: hidden; /* Se aplica a HTML para evitar problemas de zoom y layout */
 }
 
+/* Estilos para el overlay del menú */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1001; /* Justo debajo del menú */
+}
+.nav-open .menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
 .hero {
   padding: 5rem 0; /* Aumentamos el padding para más impacto visual */
   /* Se añade una imagen de fondo con una capa oscura para legibilidad */
@@ -639,7 +655,7 @@ html.nav-open {
   .main-nav a.active,
   .main-nav a:hover {
     background-color: transparent; /* Sin fondo al pasar el cursor */
-    color: #a8b52a; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1) */
+    color: #7d871d; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1 sobre #f4f4f4) */
   }
   /* Nos aseguramos de que el overflow:hidden no afecte al escritorio */
   html.nav-open {
@@ -694,23 +710,4 @@ html.nav-open {
 }
 
 /* Respetar preferencias de animación reducida */
-@media (prefers-reduced-motion: reduce) {
-  .brand,
-  .main-nav a,
-  .btn,
-  .contact-page input,
-  .contact-page textarea,
-  .contact-page .btn,
-  .hero,
-  .hero h1,
-  .hero p,
-  .features article,
-  .about,
-  .site-footer, .animate-on-scroll {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* Helper de accesibilidad */
-:focus { outline: 3px solid #ffd59e; outline-offset: 2px; }
+@media (prefers-re
