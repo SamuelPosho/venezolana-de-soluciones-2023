@@ -740,7 +740,6 @@ html {
 .rin-wiki-layout {
     grid-template-columns: 3fr 1fr; /* 3 partes para el texto, 1 para el infobox */
   }
-}
 
 /* Estilos adicionales para la página de wiki de Rin */
 .rin-main-quote {
