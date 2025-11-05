@@ -589,7 +589,6 @@ html {
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0); 
-  /* La transición de entrada se combina con la del hover */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
 }
 /* Añadimos un retraso en la transición para las tarjetas de características */
