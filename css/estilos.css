@@ -31,6 +31,7 @@ h1, h2, h3, h4 {
 }
 html {
   scroll-behavior: smooth; /* Habilita el scroll suave en toda la página */
+  overflow-x: hidden; /* Previene el desbordamiento horizontal a nivel de documento */
 }
 .container { max-width: var(--max-ancho); margin: 0 auto; padding: 1rem; }
 .site-header {
