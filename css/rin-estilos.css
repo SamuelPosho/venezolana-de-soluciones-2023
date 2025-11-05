@@ -150,15 +150,6 @@ h1, h2 {
   box-shadow: 0 4px 15px var(--rin-sombra);
 }
 
-.pie-pagina-wiki {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rin-borde);
-  font-size: 0.9rem;
-  color: #888;
-}
-
 /* Media Query para pantallas más grandes */
 @media (min-width: 768px) {
   .caja-info {
@@ -166,6 +157,12 @@ h1, h2 {
     width: 280px;
     margin-left: 2rem;
     margin-bottom: 1rem;
+  }
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
   }
 }
 
@@ -239,27 +236,6 @@ h1, h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Estilos para el botón de volver al inicio */
-.boton-inicio {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--rin-encabezado);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: var(--rin-radio);
-  text-decoration: none;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.boton-inicio:hover {
-  background-color: var(--rin-acento);
-  color: var(--rin-texto);
-}
-
-
-
 /* Estilos para la sección de audio */
 .seccion-audio {
   margin-top: 2rem;
@@ -290,4 +266,35 @@ h1, h2 {
 
 .reproductor-audio audio {
   width: 100%;
+}
+
+/* Estilos unificados del pie de página */
+.site-footer {
+  border-top: 1px solid var(--rin-borde);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 2rem;
+}
+.site-footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.footer-links {
+  display: flex;
+}
+.footer-icon-link {
+  color: #888;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-icon-link:hover {
+  color: var(--rin-acento);
+  transform: translateY(-2px);
 }

@@ -256,34 +256,6 @@ html {
   margin-top: 0;
 }
 
-.clients {
-  padding: 3rem 0;
-  text-align: center;
-}
-.clients-header {
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-}
-.client-logos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  align-items: center;
-}
-.client-logo {
-  padding: 1rem;
-}
-.client-logo img {
-  max-width: 100%;
-  height: auto;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter 0.3s ease, opacity 0.3s ease;
-}
-.client-logo img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-}
 .site-footer {
   border-top: 1px solid var(--borde);
   padding: 1.5rem 0;
@@ -598,12 +570,6 @@ html {
 .features .animate-on-scroll:nth-child(3) {
   transition-delay: 0.4s;
 }
-.client-logos .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
-.client-logos .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
-.client-logos .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
-.client-logos .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
-.client-logos .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
-.client-logos .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
 
 
 
@@ -684,9 +650,6 @@ html {
     justify-content: space-between;
     gap: 2rem;
     align-items: center;
-  }
-  .client-logos {
-    grid-template-columns: repeat(3, 1fr);
   }
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
