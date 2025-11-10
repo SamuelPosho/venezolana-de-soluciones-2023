@@ -1,71 +1,132 @@
-/* Estilos básicos mobile-first (archivo en español) */
-
 :root {
-  --marca: #4a4a4a; /* Gris oscuro profesional */
-  --acento: #d1de3f; /* Amarillo/lima del logo */
-  --fondo: #f4f4f4; /* Gris claro para el fondo */
-  --texto: #222;
-  --muted: #777;
-  --superficie: #fff; /* Color para tarjetas, header, etc. */
-  --borde: #eee;
-  --sombra: rgba(0,0,0,0.1);
+  /* Paleta semántica principal (mantengo variables previas para compatibilidad) */
+  --marca: #4a4a4a;           /* color de marca / texto principal */
+  --acento: #d1de3f;          /* color acento (amarillo/verdoso) */
+  --fondo: #f4f4f4;           /* fondo de la página */
+  --texto: #222;              /* color texto principal */
+  --muted: #777;              /* texto secundario */
+  --superficie: #fff;         /* color de superficies / tarjetas */
+  --borde: #eee;              /* color de bordes */
+  --sombra: rgba(0, 0, 0, 0.1);
   --header-bg: rgba(255, 255, 255, 0.9);
+
+  /* Tokens adicionales: versiones y nombres semánticos */
+  --color-brand-900: #2f2f2f;
+  --color-brand-700: #4a4a4a; /* coincide con --marca */
+  --color-accent-600: #d1de3f; /* coincide con --acento */
+  --color-accent-400: #e8ef86;
+  --bg-100: #fbfbfb;
+  --bg-200: #f4f4f4; /* coincide con --fondo */
+  --surface-100: #ffffff; /* coincide con --superficie */
+
+  /* Sombra / elevación */
+  --shadow-1: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-2: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* Dimensiones y radio */
   --max-ancho: 1100px;
   --radio: 6px;
+
+  /* Espaciado (sistema simple) */
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+  --font-sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-heading: 'Poppins', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+:root {
+  --fs-xxl: clamp(2.25rem, 4.5vw, 3.5rem);
+  --fs-xl:  clamp(1.6rem, 3.2vw, 2.25rem);
+  --fs-lg:  clamp(1.15rem, 2.2vw, 1.5rem);
+  --fs-md:  1rem;
+  --fs-sm:  0.9rem;
+
+  --leading-loose: 1.75;
+  --leading-normal: 1.45;
+
+  --anim-fast: 180ms;
+  --anim-medium: 280ms;
+  --anim-slow: 420ms;
+}
+.elev-1 { box-shadow: var(--shadow-1); }
+.elev-2 { box-shadow: var(--shadow-2); }
+.card {
+  background: var(--surface-100);
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  padding: var(--space-md);
+}
+:focus-visible {
+  outline: 3px solid var(--color-accent-600);
+  outline-offset: 3px;
+}
+.anim-smooth {
+  transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease, opacity var(--anim-fast) ease;
+}
+* { 
+  box-sizing: border-box;
 }
 
-* { box-sizing: border-box; }
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   color: var(--texto);
   background: var(--fondo);
-  line-height: 1.5; 
-  overflow-x: hidden; /* Evita el desbordamiento horizontal en toda la página */
+  line-height: 1.5;
+  overflow-x: hidden;
 }
-/* Usamos Poppins para los encabezados para un look moderno y limpio */
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600; /* Usamos semibold para un impacto visual moderno */
+  font-weight: 600;
 }
 html {
-  scroll-behavior: smooth; /* Habilita el scroll suave en toda la página */
-  overflow-x: hidden; /* Previene el desbordamiento horizontal a nivel de documento */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-.container { max-width: var(--max-ancho); margin: 0 auto; padding: 1rem; }
+.container { 
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  padding: 1rem;
+}
 .site-header {
-  background: var(--header-bg); /* Fondo ligeramente traslúcido */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque para el contenido detrás */
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borde);
   position: sticky;
   top: 0;
-  z-index: 10; /* Asegura que el encabezado esté sobre el resto del contenido */
+  z-index: 10;
 }
-.site-header .container { display: flex; align-items: center; gap: 1rem; }
+.site-header .container { 
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .brand {
   font-weight: 700;
   color: var(--marca);
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
-.brand:hover { opacity: 0.8; }
-.logo {
-  height: 48px; /* Ajusta esta altura según el tamaño de tu logo */
-  width: 48px;
-  vertical-align: middle; /* Alinea la imagen verticalmente con el texto de la navegación */
+.brand:hover { 
+  opacity: 0.8;
 }
-
-/* Estilos del menú hamburguesa */
+.logo {
+  height: 48px;
+  width: 48px;
+  vertical-align: middle;
+}
 .menu-toggle {
-  display: block; /* Visible por defecto en móvil */
+  display: block;
   background: none;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
   padding: 0.5rem;
-  margin-left: auto; /* Empuja el botón a la derecha */
-  z-index: 1003; /* Asegura que esté sobre el menú */
+  margin-left: auto;
+  z-index: 1003;
 }
-
 .menu-toggle .hamburger {
   display: block;
   width: 24px;
@@ -74,7 +135,6 @@ html {
   position: relative;
   transition: background-color 0.15s ease-in-out;
 }
-
 .menu-toggle .hamburger::before,
 .menu-toggle .hamburger::after {
   content: '';
@@ -89,19 +149,18 @@ html {
 .menu-toggle .hamburger::before { top: -8px; }
 .menu-toggle .hamburger::after { bottom: -8px; }
 
-/* Ocultar navegación por defecto en móvil */
 .main-nav {
-  visibility: hidden; /* Usamos visibility en lugar de display para permitir la animación */
+  visibility: hidden;
   flex-direction: column;
-  justify-content: flex-start; /* Alinea los botones desde arriba */
-  align-items: stretch; /* Estira los botones para que ocupen todo el ancho */
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 1rem;
   position: fixed;
-  top: 77px; /* Altura del header para posicionarse debajo */
+  top: 77px;
   right: 0;
   width: auto;
-  height: auto; /* La altura se ajusta al contenido */
-  background: var(--superficie); /* Mantenemos el menú blanco */
+  height: auto;
+  background: var(--superficie);
   z-index: 1002;
   padding: 1rem;
   box-shadow: -5px 0 15px var(--sombra);
@@ -115,12 +174,16 @@ html {
   font-size: 1.2rem;
   padding: 0.8rem 1rem;
   border-radius: var(--radio);
-  width: 100%;  
-  /* Animación de entrada para cada enlace */
+  width: 100%;
   opacity: 0;
   transform: translateY(-10px);
-  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  transition: 
+    color 0.3s ease,
+    background-color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
+
 .main-nav a.active,
 .main-nav a:hover {
   color: var(--marca);
@@ -130,7 +193,6 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
-/* Retraso escalonado para la animación de los enlaces */
 .nav-open .main-nav a:nth-child(1) {
   transition-delay: 0.15s;
 }
@@ -140,15 +202,14 @@ html {
 .nav-open .main-nav a:nth-child(3) {
   transition-delay: 0.35s;
 }
-/* Estilos cuando el menú está abierto (usando JS y la clase .nav-open) */
 .nav-open .main-nav {
   display: flex;
-  visibility: visible; /* Hacemos visible el menú para que la animación funcione */
+  visibility: visible;
   transform: translateX(0);
 }
 
 .nav-open .menu-toggle .hamburger {
-  background-color: transparent; /* La barra del medio desaparece */
+  background-color: transparent;
 }
 
 .nav-open .menu-toggle .hamburger::before {
@@ -159,56 +220,66 @@ html {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Ocultar el scroll del body cuando el menú está abierto */
 html.nav-open {
-  overflow: hidden; /* Se aplica a HTML para evitar problemas de zoom y layout */
-}
-
-/* Estilos para el overlay del menú */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  z-index: 1001; /* Justo debajo del menú */
-}
-.nav-open .menu-overlay {
-  opacity: 1;
-  visibility: visible;
+  overflow: hidden;
 }
 .hero {
-  padding: 5rem 0; /* Aumentamos el padding para más impacto visual */
-  /* Se añade una imagen de fondo con una capa oscura para legibilidad */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../recursos/imagenes/hero-background.jpg');
+  padding: 5rem 0;
+  /* Hero con capa de degradado para mejorar legibilidad del texto sobre la imagen */
+  background-image: linear-gradient(180deg, rgba(18,18,18,0.45), rgba(18,18,18,0.3)), url('../recursos/imagenes/hero-background.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: scroll; /* Se cambia a scroll en móvil para evitar bugs al abrir el menú */
-  color: #fff; /* Cambiamos el color del texto a blanco para que sea legible */
-  text-align: center; /* Centramos el contenido */
+  background-attachment: scroll;
+  color: #fff;
+  text-align: center;
   animation: fadeIn 1s ease-out;
 }
 .hero h1 {
   margin: 0 0 0.5rem;
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Tamaño de fuente adaptable */
+  font-size: var(--fs-xxl);
   animation: slideInLeft 0.8s ease-out;
 }
 .hero p {
-  font-size: 1.2rem;  
-  max-width: 600px; /* Limitamos el ancho del párrafo para mejor lectura */
-  margin: 0 auto 1.5rem auto; /* Centramos el párrafo */
+  font-size: var(--fs-md);  
+  max-width: 720px;
+  margin: 0 auto 1.25rem auto;
   animation: slideInRight 0.8s ease-out; 
 }
-.hero-logo {
-  display: block;
-  margin: 1.5rem auto;
-  max-height: 240px;
-  width: auto;
-  animation: fadeInUp 0.8s ease-out 0.3s backwards;
+/* CTA principal dentro del hero */
+.hero-cta {
+  display: inline-block;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 1.25rem;
+  border-radius: calc(var(--radio) + 2px);
+  color: #fff;
+  background: linear-gradient(90deg, var(--color-brand-700), var(--color-accent-600));
+  border: 1px solid rgba(255,255,255,0.06);
+  font-weight: 700;
+  box-shadow: var(--shadow-2);
+  transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease, opacity var(--anim-fast) ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.14);
+  opacity: 0.98;
+}
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.995);
+}
+.cta-banner .btn {
+  padding: 0.9rem 1.25rem;
+}
+/* Reducir movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .hero, .features article {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
 }
 .btn {
   display: inline-block;
@@ -224,7 +295,7 @@ html.nav-open {
 .btn:hover {
   background: var(--acento);
   border-color: var(--acento);
-  color: var(--marca); /* Cambiamos el color del texto para mejor contraste */
+  color: var(--marca);
   transform: scale(1.05);
 }
 .features {
@@ -233,35 +304,30 @@ html.nav-open {
   grid-template-columns: 1fr;
   padding: 3rem 0;
 }
-.features article,
-.service-card {
-  /* Estilos combinados para las tarjetas de características */
+.features article {
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   background-color: var(--superficie);
-  overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease;
 }
-.features article p,
-.service-card p {
+.features article p {
   padding-bottom: 1.5rem;
-  flex-grow: 1; /* Asegura que el texto empuje el botón hacia abajo si lo hubiera */
+  flex-grow: 1;
 }
-.features article:hover,
-.service-card:hover {
+.features article:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 20px var(--sombra);
+  box-shadow: var(--shadow-1);
 }
-.features article h2, .features article p,
-.service-card h2, .service-card p {
+.features article h2, .features article p {
   padding: 0 1.5rem;
 }
 .card-image {
   width: 100%;
-  height: 250px; /* Altura fija para todas las imágenes de las tarjetas */
-  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  height: 250px;
+  object-fit: cover;
   margin-bottom: 1.5rem;
 }
 .about {
@@ -306,14 +372,9 @@ html.nav-open {
   color: var(--acento);
   transform: translateY(-2px);
 }
-.footer-icon-link.boton-secreto:hover {
-  transform: rotate(15deg) scale(1.1); /* Rotación y escala para un efecto divertido */
-  color: var(--acento); /* Asegura que el color de acento se aplique */
-}
 .page-header {
   text-align: center;
   margin-bottom: 2rem;
-  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -327,16 +388,14 @@ html.nav-open {
   margin-bottom: 2rem; 
 }
 .contact-page label { display: block; margin-top: 1rem; }
-.contact-page input,
-.contact-page textarea {
+.contact-page input, .contact-page textarea {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.contact-page input:focus,
-.contact-page textarea:focus {
+.contact-page input:focus, .contact-page textarea:focus {
   border-color: var(--marca);
   box-shadow: 0 0 5px rgba(30, 102, 163, 0.3);
 }
@@ -388,7 +447,6 @@ html.nav-open {
   transition: all 0.3s ease;
 }
 .social-links a svg {
-  /* El color del ícono será el mismo que el del texto del enlace */
   stroke: currentColor;
   transition: color 0.3s ease;
 }
@@ -406,46 +464,43 @@ html.nav-open {
   height: 300px;
 }
 
-/* Estilos para la página de servicios */
 .services-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
 }
-/* Animaciones para la página de contacto */
 .contact-grid form {
-  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .contact-grid .contact-details {
-  /* Corrección: Añadir opacidad y forwards para que la animación funcione al aparecer */
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.2s forwards; /* Se anima un poco después del formulario */
 }
 
-/* Animación para la página "Quiénes somos" */
+/* Animación para la página Quiénes somos*/
 .about-us-content {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.2s forwards;
 }
 
-/* Estilos para la página "Quiénes somos" */
 .mission-vision-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
-.mission-card, .vision-card {
+.mission-card,
+.vision-card {
   padding: 2rem;
   border-radius: var(--radio);
   background-color: var(--superficie);
   border-left: 5px solid var(--acento);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.mission-card h3, .vision-card h3 {
+.mission-card h3,
+.vision-card h3 {
   margin-top: 0;
   color: var(--marca);
 }
@@ -504,7 +559,10 @@ html.nav-open {
 .values-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
 .values-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
 
-/* En móvil, la imagen de la historia va primero */
+/* La sección '¿Por qué elegirnos?' usa ahora la estructura de
+   `.history-section .about-text` y `.history-section .about-image`.
+   Se eliminan reglas específicas previas para evitar duplicidad. */
+
 .history-section .about-image {
   order: -1;
 }
@@ -513,7 +571,45 @@ html.nav-open {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para la sección de llamada a la acción (CTA) */
+/* Mejora de micro-tipografía para secciones de texto largo (ej. Conócenos)
+   - Aumenta interlineado en móvil para lecturas largas
+   - Ajusta tamaño de fuente y espaciado para mejor legibilidad
+*/
+.about-text {
+  padding-right: 2rem; /* separación respecto a la imagen en escritorio */
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: var(--texto);
+}
+.about-text ul {
+  margin-left: 1.05rem;
+  margin-bottom: 1rem;
+}
+.about-text li { margin-bottom: 0.55rem; }
+
+@media (max-width: 699px) {
+  .about-text {
+    padding-left: 1rem; /* margen interior para no pegar el texto al borde */
+    padding-right: 1rem;
+  }
+  .about-text p {
+    font-size: 1rem; /* mantiene legibilidad en móvil */
+    line-height: 1.9; /* mayor espacio entre líneas para lectura comparativa */
+  }
+  .about-text h2.section-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (min-width: 700px) {
+  /* en pantallas grandes añadimos margen izquierdo para que el bloque no pegue al borde */
+  .about-text { padding-left: 0; }
+}
+
 .cta-section {
   background-color: var(--superficie);
   border-radius: var(--radio);
@@ -536,7 +632,6 @@ html.nav-open {
   box-shadow: 0 8px 25px var(--sombra);
 }
 
-/* Estilos para el botón "Volver Arriba" */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -564,9 +659,6 @@ html.nav-open {
 .back-to-top:hover {
   background-color: var(--acento);
 }
-
-/* Animaciones */
-/* Estilos para la animación de scroll */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -588,7 +680,6 @@ html.nav-open {
   transform: translateY(0); 
   transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
 }
-/* Añadimos un retraso en la transición para las tarjetas de características */
 .features .animate-on-scroll:nth-child(2) {
   transition-delay: 0.2s;
 }
@@ -615,14 +706,11 @@ html.nav-open {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsividad */
 @media (min-width: 700px) {
-  /* Ocultar el botón de hamburguesa en escritorio */
   .menu-toggle {
     display: none;
   }
 
-  /* Restaurar estilos de navegación para escritorio */
   .main-nav {
     visibility: visible; /* Aseguramos que el menú sea visible en escritorio */
     display: flex;
@@ -632,38 +720,36 @@ html.nav-open {
     background: none;
     backdrop-filter: none;
     margin-left: auto;
-    box-shadow: none; /* Eliminamos la sombra del menú móvil */
+    box-shadow: none;
     flex-direction: row;
     gap: 1rem;
-    padding: 0; /* Reseteamos el padding del menú móvil */
+    padding: 0;
     opacity: 1;
     transform: none;
     transition: none;
   }
   .main-nav a {
     font-size: 1rem;
-    padding: 0; /* Eliminamos el padding para que sea solo texto */
+    padding: 0;
     border-radius: 0;
     color: var(--muted);
     font-weight: normal;
-    background-color: transparent; /* Aseguramos que no tenga fondo */
-    /* Restauramos la opacidad y transformación para la vista de escritorio */
+    background-color: transparent;
     opacity: 1;
     transform: none;
-    transition: color 0.3s ease; /* Mantenemos solo la transición de color */
+    transition: color 0.3s ease;
   }
   .main-nav a.active,
   .main-nav a:hover {
-    background-color: transparent; /* Sin fondo al pasar el cursor */
-    color: #7d871d; /* Tono de acento oscurecido para mejor contraste (Ratio 4.55:1 sobre #f4f4f4) */
+    background-color: transparent;
+    color: #7d871d;
   }
-  /* Nos aseguramos de que el overflow:hidden no afecte al escritorio */
   html.nav-open {
-    overflow: auto; /* Restauramos el scroll en escritorio */
+    overflow: auto;
   }
 
   .hero {
-    background-attachment: fixed; /* Restauramos el efecto parallax en escritorio */
+    background-attachment: fixed;
   }
 
   .features {
@@ -690,7 +776,6 @@ html.nav-open {
     gap: 2rem;
     align-items: flex-start;
   }
-  /* Sobrescribimos las animaciones para escritorio para un efecto lateral */
   .contact-grid form {
     animation-name: slideInLeft;
   }
@@ -703,11 +788,263 @@ html.nav-open {
   .values-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  /* En escritorio, restauramos el orden por defecto */
+  .choose-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .history-section .about-image {
     order: 0;
   }
 }
 
-/* Respetar preferencias de animación reducida */
-@media (prefers-re
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+:focus {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+body {
+  font-size: 16px;
+}
+
+.cifras-clave h2 { margin-bottom: 1rem; }
+.stats-grid {
+  display: grid;
+  /* en móvil: una columna para apilar los contadores */
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+.stat {
+  background: var(--superficie);
+  padding: 1rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  text-align: center;
+}
+.stat-value { font-size: 2rem; font-weight: 700; color: var(--marca); }
+.stat-label { color: var(--muted); font-size: 0.95rem; }
+.industries-list { display: flex; gap: 1rem; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
+.industries-list li { 
+  background: var(--superficie); 
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  color: var(--marca);
+}
+.certs-grid { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center; 
+}
+.certs-grid img { 
+  height: 48px; 
+  width: auto; 
+  opacity: 0.95; 
+}
+.news-list { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: grid;
+  gap: 0.5rem; 
+}
+.news-list li { 
+  background: var(--superficie); 
+  padding: 0.6rem 0.8rem; 
+  border-radius: var(--radio); 
+  border: 1px solid var(--borde); 
+}
+@media (min-width: 700px) {
+  /* En escritorio mostramos 3 columnas (exactamente los tres indicadores) */
+  .stats-grid { 
+    grid-template-columns: repeat(3, 1fr);
+   }
+}
+.stat:hover { transform: translateY(-4px); 
+  box-shadow: var(--shadow-1); 
+  transition: transform var(--anim-fast) ease, box-shadow var(--anim-fast) ease;
+ }
+.stat:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-1);
+}
+.our-services .muted { margin-bottom: 1rem; }
+.services-grid-2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.service-item {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  padding: 1rem;
+  border-radius: var(--radio);
+  transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease, background-color var(--anim-medium) ease;
+}
+.service-item h3 { 
+  margin-top: 0; 
+  color: var(--marca); 
+}
+
+.process-steps {
+   list-style: none; 
+   padding: 0; 
+   margin: 0; 
+   display: grid; 
+   gap: 1rem; 
+  }
+.process-steps li {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  padding: 1rem;
+  border-radius: var(--radio);
+}
+.process-steps strong { display: block; color: var(--marca); margin-bottom: 0.3rem; }
+
+.clients-logos { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.clients-logos img { height: 48px; width: auto; opacity: 0.9; filter: grayscale(60%); }
+
+.testimonials-track { display: grid; gap: 1rem; }
+.testimonial {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  padding: 1rem;
+  border-radius: var(--radio);
+}
+.testimonial p { margin: 0 0 0.5rem 0; }
+.testimonial cite { 
+  color: var(--muted); 
+  font-size: 0.95rem; }
+.cta-banner { 
+  background: linear-gradient(90deg, rgba(125,135,29,0.08), rgba(209,222,63,0.06)); 
+  padding: 2rem 0; 
+  margin-top: 2rem; 
+}
+.cta-inner { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+  align-items: center; 
+  text-align: center; 
+}
+@media (min-width: 700px) {
+  .services-grid-2 {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+  .process-steps { 
+    grid-template-columns: repeat(4, 1fr); 
+}
+  .cta-inner {
+    flex-direction: row; 
+    justify-content: space-between;
+   }
+}
+@media (min-width: 700px) {
+  .about.choose-us-section {
+    gap: 3rem; /* más espacio entre columnas para mejorar el margen visual */
+  }
+}
+/* Estilos para listas en .about-text */
+.about-text ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+}
+.about-text ul li {
+  margin-bottom: 0.75rem;
+}
+
+/* Interacciones y decoraciones para secciones inferiores */
+.interactive-section {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+  will-change: transform;
+}
+.interactive-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.09);
+  background-color: rgba(255,255,255,0.02);
+}
+
+/* Ilustraciones representativas para secciones; visibles en escritorio */
+.section-illustration {
+  display: none; /* oculto en móvil */
+}
+.section-illustration img {
+  display: block;
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.section-illustration img:hover { transform: translateY(-4px) scale(1.02); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08)); }
+
+@media (min-width: 700px) {
+  .section-illustration { display: block; }
+  /* posicionamos las ilustraciones al lado derecho de los contenidos en filas con grid */
+  .cifras-clave .section-illustration,
+  .noticias .section-illustration {
+    justify-self: end;
+    align-self: center;
+  }
+  .cta-banner .section-illustration { order: 2; margin-left: 1rem; }
+  /* En layouts que usan .cta-inner como flex, ajustamos el ancho */
+  .cta-inner .section-illustration img { width: 180px; }
+}
+.our-services .services-wrap {
+  display: block;
+}
+.our-services .services-list {
+  display: grid;
+  gap: 1rem;
+}
+.our-services .service-item {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  padding: 1rem;
+  border-radius: var(--radio);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+}
+.our-services .service-item:hover,
+.our-services .service-item:focus-within,
+.our-services .service-item:focus-visible {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-1);
+  background-color: rgba(255,255,255,0.02);
+}
+
+@media (min-width: 700px) {
+  .our-services .services-wrap {
+    display: grid;
+    grid-template-columns: 1fr 360px; /* lista + ilustración */
+    gap: 2rem;
+    align-items: center;
+  }
+  .our-services .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .our-services .section-illustration {
+    justify-self: end;
+    align-self: center;
+  }
+  .our-services .section-illustration img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.32s ease, filter 0.32s ease;
+  }
+  .our-services .section-illustration img:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 10px 24px rgba(0,0,0,0.08));
+  }
+}
