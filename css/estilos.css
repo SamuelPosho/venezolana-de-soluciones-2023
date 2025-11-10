@@ -330,6 +330,30 @@ html.nav-open {
   object-fit: cover;
   margin-bottom: 1.5rem;
 }
+.card-image--contain {
+  width: 100%;
+  height: 250px;          /* igual altura que .card-image para consistencia */
+  object-fit: cover;      /* cubre la caja, mantiene aspecto consistente */
+  object-position: center center; /* centramos el foco de la imagen */
+  background-color: var(--bg-100);
+  display: block;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 699px) {
+  .card-image--contain { height: 180px; }
+}
+/* Ajustes específicos para la ilustración de la sección "Nuestros servicios" en móvil */
+@media (max-width: 699px) {
+  .our-services .section-illustration img {
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
 .about {
   padding: 2rem 0;
 }
@@ -973,11 +997,15 @@ body {
 
 /* Ilustraciones representativas para secciones; visibles en escritorio */
 .section-illustration {
-  display: none; /* oculto en móvil */
+  /* Por defecto mostramos ilustraciones; algunas se ocultaban en móvil antes,
+     pero ahora permitimos que se muestren cuando sea necesario y se controle
+     por secciones específicas (p. ej. .our-services) */
+  display: block;
 }
 .section-illustration img {
   display: block;
-  width: 220px;
+  width: 100%;          /* responsive por defecto */
+  max-width: 360px;     /* limitar anchura en escritorio */
   height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -1034,6 +1062,8 @@ body {
   .our-services .section-illustration {
     justify-self: end;
     align-self: center;
+    /* Aseguramos que la ilustración se muestre también en móvil para esta sección */
+    display: block;
   }
   .our-services .section-illustration img {
     width: 100%;
