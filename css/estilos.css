@@ -343,9 +343,8 @@ html.nav-open {
   background-color: var(--superficie);
   border-bottom: 4px solid var(--acento);
   transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease;
-}
-.caracteristicas article:hover,
-.caracteristicas article:focus-within { /* Add focus-within for keyboard navigation */
+}.caracteristicas article.is-expanded,
+.caracteristicas article:focus-within { /* Apply visual feedback when expanded or focused */
   transform: translateY(-8px);
   box-shadow: var(--shadow-1);
 }
@@ -361,8 +360,7 @@ html.nav-open {
   padding: 0 1.5rem; /* Apply horizontal padding */
   transition: max-height var(--anim-medium) ease-out, padding-bottom var(--anim-medium) ease-out;
 }
-.caracteristicas > article:hover .caracteristica-card-description,
-.caracteristicas > article:focus-within .caracteristica-card-description {
+.caracteristicas article.is-expanded .caracteristica-card-description {
   max-height: 200px; /* A value large enough to contain the longest description */
   padding-bottom: 1.5rem; /* Add padding at the bottom when expanded */
 }
