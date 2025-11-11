@@ -239,6 +239,7 @@ html.nav-open {
   overflow: hidden;
 }
 .hero {
+  position: relative;
   padding: 5rem 0;
   /* Hero con capa de degradado para mejorar legibilidad del texto sobre la imagen */
   background-image: linear-gradient(180deg, rgba(18,18,18,0.45), rgba(18,18,18,0.3)), url('../recursos/imagenes/hero-background.jpg');
@@ -248,6 +249,15 @@ html.nav-open {
   color: #fff;
   text-align: center;
   animation: fadeIn 1s ease-out;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--fondo));
 }
 .hero h1 {
   margin: 0 0 0.5rem;
@@ -315,42 +325,62 @@ html.nav-open {
   color: var(--marca);
   transform: scale(1.05);
 }
-.features {
+.caracteristicas {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
   padding: 3rem 0;
 }
-.features article {
+.caracteristicas article { /* Target the article directly */
   display: flex;
   flex-direction: column;
   /* Box Model */
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   overflow: hidden;
+  position: relative; /* Needed for proper stacking context if we add more complex effects */
   /* Visual */
   background-color: var(--superficie);
   border-bottom: 4px solid var(--acento);
   transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease;
 }
-.features article p {
-  padding-bottom: 1.5rem;
-  flex-grow: 1;
-}
-.features article:hover {
+.caracteristicas article:hover,
+.caracteristicas article:focus-within { /* Add focus-within for keyboard navigation */
   transform: translateY(-8px);
   box-shadow: var(--shadow-1);
 }
-.features article h2, .features article p {
+.caracteristicas article h2 {
   padding: 0 1.5rem;
+  margin-top: 1rem; /* Add some space above the title */
+  margin-bottom: 0.5rem; /* Space between title and description */
 }
-.card-image {
+/* New styles for the collapsible description */
+.caracteristicas article .caracteristica-card-description {
+  max-height: 0; /* Initially hide the content */
+  overflow: hidden;
+  padding: 0 1.5rem; /* Apply horizontal padding */
+  transition: max-height var(--anim-medium) ease-out, padding-bottom var(--anim-medium) ease-out;
+}
+.caracteristicas > article:hover .caracteristica-card-description,
+.caracteristicas > article:focus-within .caracteristica-card-description {
+  max-height: 200px; /* A value large enough to contain the longest description */
+  padding-bottom: 1.5rem; /* Add padding at the bottom when expanded */
+}
+.caracteristicas article .caracteristica-card-description p {
+  margin: 0; /* Remove default paragraph margins */
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.tarjeta-imagen {
   width: 100%;
   height: 250px;
   object-fit: cover;
   margin-bottom: 1.5rem;
 }
-.card-image--contain {
+.tarjeta-imagen {
+  border-radius: var(--radio);
+}
+.tarjeta-imagen--contenida {
   display: block;
   /* Box Model */
   width: 100%;
@@ -364,19 +394,24 @@ html.nav-open {
 }
 
 @media (max-width: 699px) {
-  .card-image--contain { 
+  .tarjeta-imagen--contenida { 
     height: 180px; }
 }
-.about {
+.acerca-de {
   padding: 2rem 0;
 }
-.about-image img {
+.acerca-de-imagen img {
   width: 100%;
   height: auto;
   border-radius: var(--radio);
   margin-top: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.about-text h2 {
+.acerca-de-imagen:hover img {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-2);
+}
+.acerca-de-texto h2 {
   margin-top: 0;
 }
 
@@ -391,46 +426,46 @@ html.nav-open {
   padding-top: 0;
   padding-bottom: 0;
 }
-.footer-content {
+.pie-contenido {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1rem;
 }
-.footer-links {
+.pie-enlaces {
   display: none; /* Ocultamos el contenedor viejo, ya no se usa */
 }
-.footer-info {
+.pie-info {
   text-align: center;
 }
-.footer-actions {
+.pie-acciones {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
-.footer-contact {
+.pie-contacto {
   font-size: 0.95rem;
   margin-top: 0.25rem;
   font-style: normal;
 }
-.footer-contact a {
+.pie-contacto a {
   color: var(--superficie);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
-.footer-contact .sep {
+.pie-contacto .sep {
   margin: 0 0.5rem;
   color: rgba(255, 255, 255, 0.3);
 }
-.footer-actions h4 {
+.pie-acciones h4 {
   color: var(--superficie);
   margin: 0 0 0.25rem 0;
   font-size: 1rem;
 }
-.social-links ul {
+.redes-sociales ul {
   list-style: none;
   display: flex;
   gap: 0.75rem;
@@ -438,26 +473,25 @@ html.nav-open {
   margin: 0;
   align-items: center;
 }
-.social-links a, .footer-icon-link {
+.redes-sociales a, .footer-icon-link {
   color: var(--muted);
   transition: color 0.3s ease;
 }
-.social-links a:hover, .footer-icon-link:hover {
+.redes-sociales a:hover, .footer-icon-link:hover {
   color: var(--acento);
 }
-.social-links img { width:18px; height:18px; display:block; }
-.page-header h1 {
+.encabezado-pagina h1 {
   margin-bottom: 0.5rem;
 }
-.contact-page form { 
+.pagina-contacto form { 
   max-width: 640px;
   margin-bottom: 2rem; 
 }
-.contact-page label { 
+.pagina-contacto label { 
   display: block; 
   margin-top: 1rem; 
 }
-.contact-page input, .contact-page textarea {
+.pagina-contacto input, .pagina-contacto textarea {
   /* Box Model */
   width: 100%;
   padding: 0.5rem;
@@ -466,15 +500,15 @@ html.nav-open {
   /* Animación */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.contact-page input:focus, .contact-page textarea:focus {
+.pagina-contacto input:focus, .pagina-contacto textarea:focus {
   border-color: var(--marca);
   box-shadow: 0 0 5px rgba(30, 102, 163, 0.3);
 }
-.contact-page .btn {
+.pagina-contacto .btn {
   margin-top: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
-.contact-page .btn:hover {
+.pagina-contacto .btn:hover {
   background: var(--acento);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -483,21 +517,21 @@ html.nav-open {
   color: var(--muted);
   margin: 0.5rem 0 0;
 }
-.contact-details {
+.detalles-contacto {
   padding: 1.5rem;
   border-radius: var(--radio);
   border: 1px solid var(--borde);
   background-color: var(--superficie);
 }
-.contact-details h2 {
+.detalles-contacto h2 {
   margin-top: 0;
   border-bottom: 2px solid var(--acento);
   padding-bottom: 0.5rem;
 }
-.social-links {
+.redes-sociales {
   margin-top: 1.5rem;
 }
-.social-links ul {
+.redes-sociales ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -505,7 +539,7 @@ html.nav-open {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.social-links a {
+.redes-sociales a {
   /* Layout */
   display: flex;
   align-items: center;
@@ -520,33 +554,33 @@ html.nav-open {
   color: var(--muted);
   transition: all 0.3s ease;
 }
-.social-links a svg {
+.redes-sociales a svg {
   stroke: currentColor;
   transition: color 0.3s ease;
 }
-.social-links a:hover {
+.redes-sociales a:hover {
   /* Al pasar el cursor, el color del enlace (y del ícono) cambiará */
   color: var(--acento);
   border-color: var(--acento);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px var(--sombra);
 }
-.map-location iframe {
+.ubicacion-mapa iframe {
   border-radius: var(--radio);
   margin-top: 1rem;
   width: 100%;
   height: 300px;
 }
-.services-grid {
+.rejilla-servicios {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
 }
-.contact-grid form {
+.columna-formulario {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
-.contact-grid .contact-details {
+.rejilla-contacto .detalles-contacto {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.2s forwards; /* Se anima un poco después del formulario */
 }
@@ -561,8 +595,7 @@ html.nav-open {
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
-.mission-card,
-.vision-card {
+.tarjeta-mision {
   padding: 2rem;
   /* Box Model */
   border-radius: var(--radio);
@@ -571,103 +604,124 @@ html.nav-open {
   background-color: var(--superficie);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.mission-card h3,
-.vision-card h3 {
+.tarjeta-vision {
+  padding: 2rem;
+  /* Box Model */
+  border-radius: var(--radio);
+  border-left: 5px solid var(--acento);
+  /* Visual */
+  background-color: var(--superficie);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-mision h2,
+.tarjeta-vision h2 {
   margin-top: 0;
   color: var(--marca);
 }
-.mission-card:hover, .vision-card:hover {
+.tarjeta-mision:hover, .tarjeta-vision:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px var(--sombra);
 }
-.values-section {
+.seccion-valores {
   text-align: center;
   margin-bottom: 3rem;
 }
 .section-title {
   margin-bottom: 2rem;
 }
-.values-grid {
+.rejilla-valores {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-.value-card {
+.tarjeta-valor {
   padding: 1.5rem;
   border-radius: var(--radio);
   border: 1px solid var(--borde);
   background-color: var(--superficie);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.value-card:hover {
+.tarjeta-valor:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px var(--sombra);
 }
-.value-icon {
+.icono-valor {
   margin-bottom: 1rem;
 }
-.value-card:hover .value-icon img {
+.tarjeta-valor:hover .icono-valor img {
   transform: scale(1.1) rotate(5deg);
 }
-.value-icon img {
+.icono-valor img {
   padding: 0.5rem;
   border-radius: 50%;
   border: 2px solid var(--borde);
   background-color: transparent;
   transition: transform 0.3s ease;
 }
-.value-card h4 {
+.tarjeta-valor h4 {
   margin: 0 0 0.5rem 0;
   color: var(--marca);
 }
-.value-card p {
+.tarjeta-valor p {
   margin: 0;
   color: var(--muted);
 }
 /* Retrasos de animación para los valores */
-.values-grid .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
-.values-grid .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
-.values-grid .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
-.history-section .about-image {
+.rejilla-valores .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.rejilla-valores .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.rejilla-valores .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.seccion-historia .acerca-de-imagen {
   order: -1;
 }
-.history-section {
+.seccion-historia {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.about-text {
+.acerca-de-texto {
   padding-right: 2rem; /* separación respecto a la imagen en escritorio */
 }
-.about-text p {
+.acerca-de-texto p {
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 1rem;
   color: var(--texto);
 }
-.about-text ul {
+.acerca-de-texto ul {
   margin-left: 1.05rem;
   margin-bottom: 1rem;
 }
-.about-text li { margin-bottom: 0.55rem; }
+.acerca-de-texto li { margin-bottom: 0.55rem; }
 
 @media (max-width: 699px) {
-  .about-text {
+  .acerca-de-texto {
     padding-left: 1rem; /* margen interior para no pegar el texto al borde */
     padding-right: 1rem;
   }
-  .about-text p {
+  .acerca-de-texto p {
     font-size: 1rem; /* mantiene legibilidad en móvil */
     line-height: 1.9; /* mayor espacio entre líneas para lectura comparativa */
   }
-  .about-text h2.section-title {
+  .acerca-de-texto h2.section-title {
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
   }
+  .nuestros-servicios .servicios-contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  .nuestros-servicios .section-illustration {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+  .nuestros-servicios .lista-servicios {
+    margin-top: 1.5rem;
+  }
+
 }
 @media (min-width: 700px) {
   /* en pantallas grandes añadimos margen izquierdo para que el bloque no pegue al borde */
-  .about-text { padding-left: 0; }
+  .acerca-de-texto { padding-left: 0; }
 }
-.cta-section {
+.seccion-cta {
   padding: 2rem;
   margin-top: 3rem;
   border-radius: var(--radio);
@@ -676,11 +730,11 @@ html.nav-open {
   background-color: var(--superficie);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.cta-content h2 {
+.contenido-cta h2 {
   margin-top: 0;
   color: var(--marca);
 }
-.cta-content p {
+.contenido-cta p {
   max-width: 600px;
   margin: 0 auto 1.5rem auto;
 }
@@ -697,7 +751,7 @@ html.nav-open {
   padding-bottom: 2rem;
   border-radius: var(--radio);
 }
-.back-to-top {
+.volver-arriba {
   /* Posicionamiento */
   position: fixed;
   bottom: 20px;
@@ -720,12 +774,12 @@ html.nav-open {
   /* Animación */
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
-.back-to-top.is-visible {
+.volver-arriba.is-visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-.back-to-top:hover {
+.volver-arriba:hover {
   background-color: var(--acento);
 }
 .animate-on-scroll {
@@ -749,10 +803,10 @@ html.nav-open {
   transform: translateY(0); 
   transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
 }
-.features .animate-on-scroll:nth-child(2) {
+.caracteristicas .animate-on-scroll:nth-child(2) {
   transition-delay: 0.2s;
 }
-.features .animate-on-scroll:nth-child(3) {
+.caracteristicas .animate-on-scroll:nth-child(3) {
   transition-delay: 0.4s;
 }
 
@@ -833,49 +887,54 @@ html.nav-open {
     background-attachment: fixed;
   }
 
-  .features {
+  .caracteristicas {
     grid-template-columns: repeat(3, 1fr);
   }
-  .about {
+  .acerca-de {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
   }
-  .footer-content {
+  .pie-contenido {
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
     align-items: center;
   }
-  .footer-info {
+  .pie-info {
     text-align: left;
   }
-  .services-grid {
+  .rejilla-servicios {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  .contact-grid {
+  .rejilla-contacto {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     align-items: flex-start;
   }
-  .contact-grid form {
+  .rejilla-contacto .columna-formulario {
     animation-name: slideInLeft;
   }
-  .contact-grid .contact-details {
+  .rejilla-contacto .detalles-contacto {
     animation-name: slideInRight;
   }
   .mission-vision-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .values-grid {
+  .rejilla-valores {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .rejilla-horarios {
+    /* En escritorio, las tarjetas se ven mejor en una fila */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
   .choose-us-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .history-section .about-image {
+  .seccion-historia .acerca-de-imagen {
     order: 0;
   }
 }
@@ -940,16 +999,11 @@ body {
   display: grid;
 }
 
-.process-step{ display: block; color: var(--marca); margin-bottom: 0.3rem; }
-
-.clients-logos { 
-  display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; 
-  background: linear-gradient(90deg, rgba(125,135,29,0.08), rgba(209,222,63,0.06)); 
-  padding: 2rem 0; 
-  margin-top: 2rem; 
-}
+.process-step{ 
+  display: block; 
+  color: var(--marca); margin-bottom: 0.3rem; }
 .cta-inner { 
-  display: flex; 
+  display: flex;
   flex-direction: column; 
   gap: 1rem; 
   align-items: center; 
@@ -965,21 +1019,20 @@ body {
    }
 }
 @media (min-width: 700px) {
-  .about.choose-us-section {
+  .acerca-de.seccion-elegirnos {
     gap: 3rem; /* más espacio entre columnas para mejorar el margen visual */
   }
 }
 /* Estilos para listas en .about-text */
-.about-text ul {
+.acerca-de-texto ul {
   list-style: disc;
   padding-left: 1.2rem;
   margin-top: 0.6rem;
   margin-bottom: 1rem;
 }
-.about-text ul li {
+.acerca-de-texto ul li {
   margin-bottom: 0.75rem;
 }
-
 /* Interacciones y decoraciones para secciones inferiores */
 .interactive-section {
   transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
@@ -990,12 +1043,9 @@ body {
   box-shadow: 0 12px 34px rgba(0,0,0,0.09);
   background-color: rgba(255,255,255,0.02);
 }
-
 /* Ilustraciones representativas para secciones; visibles en escritorio */
 .section-illustration {
-  /* Por defecto mostramos ilustraciones; algunas se ocultaban en móvil antes,
-     pero ahora permitimos que se muestren cuando sea necesario y se controle
-     por secciones específicas (p. ej. .our-services) */
+  /* Por defecto mostramos ilustraciones algunas se ocultaban en móvil antes pero ahora permitimos que se muestren cuando sea necesario y se controle por secciones específicas*/
   display: block;
 }
 .section-illustration img {
@@ -1007,14 +1057,11 @@ body {
   border-radius: 8px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-.our-services .services-wrap {
-  display: block;
-}
-.our-services .services-list {
+.nuestros-servicios .lista-servicios {
   display: grid;
   gap: 1rem;
 }
-.our-services .service-item {
+.nuestros-servicios .elemento-servicio {
   background: var(--superficie);
   border: 1px solid var(--borde);
   padding: 1rem;
@@ -1022,33 +1069,33 @@ body {
   border-radius: var(--radio);
   transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
 }
-.our-services .service-item:hover,
-.our-services .service-item:focus-within,
-.our-services .service-item:focus-visible {
+.nuestros-servicios .elemento-servicio:hover,
+.nuestros-servicios .elemento-servicio:focus-within,
+.nuestros-servicios .elemento-servicio:focus-visible {
   transform: translateX(6px);
   box-shadow: var(--shadow-1);
   background-color: var(--fondo);
 }
 
 @media (min-width: 700px) {
-  .our-services .services-wrap {
+  .nuestros-servicios .servicios-contenedor {
     display: grid;
     grid-template-columns: 1fr 360px; /* lista + ilustración */
     gap: 2rem;
     align-items: center;
   }
-  .our-services .services-list {
+  .nuestros-servicios .lista-servicios {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-  .our-services .section-illustration {
+  .nuestros-servicios .section-illustration {
     justify-self: end;
     align-self: center;
     /* Aseguramos que la ilustración se muestre también en móvil para esta sección */
     display: block;
   }
-  .our-services .section-illustration img {
+  .nuestros-servicios .section-illustration img {
     width: 100%;
     max-width: 360px;
     height: auto;
@@ -1056,8 +1103,49 @@ body {
     border-radius: 8px;
     transition: transform 0.32s ease, filter 0.32s ease;
   }
-  .our-services .section-illustration img:hover {
+  .nuestros-servicios .section-illustration img:hover {
     transform: translateY(-6px) scale(1.03);
     filter: drop-shadow(0 10px 24px rgba(0,0,0,0.08));
   }
+}
+.seccion-horarios {
+  margin-top: 2.5rem;
+}
+.seccion-horarios h2 {
+  margin-bottom: 1rem;
+}
+.rejilla-horarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.tarjeta-horario {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  padding: 0.8rem;
+  border-top: 4px solid var(--acento);
+  border-radius: var(--radio);
+  text-align: center;
+  transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease;
+}
+.tarjeta-horario:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-1);
+}
+.horario-icono {
+  color: var(--acento);
+  margin-bottom: 0.75rem;
+}
+.horario-icono svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+.tarjeta-horario h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+}
+.tarjeta-horario p {
+  margin: 0;
+  color: var(--muted);
 }
