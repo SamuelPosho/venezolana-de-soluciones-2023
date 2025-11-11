@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Lógica para expandir/contraer tarjetas de características al hacer clic
-  const featureCards = document.querySelectorAll('.caracteristicas .caracteristica-card');
+  const featureCards = document.querySelectorAll('.caracteristicas article');
 
   featureCards.forEach(card => {
     card.addEventListener('click', (event) => {
