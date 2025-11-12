@@ -19,23 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Lógica para expandir/contraer tarjetas de características al hacer clic
-  const featureCards = document.querySelectorAll('.caracteristicas article');
+  const featureCards = document.querySelectorAll('.caracteristica-card');
 
   featureCards.forEach(card => {
-    card.addEventListener('click', (event) => {
-      // Evita que el clic dentro de la descripción cierre la tarjeta
-      if (event.target.closest('.caracteristica-card-description')) {
-        return;
-      }
+    card.addEventListener('click', () => {
       const isCurrentlyExpanded = card.classList.contains('is-expanded');
-
-      // Cierra todas las tarjetas antes de abrir la seleccionada
-      featureCards.forEach(c => c.classList.remove('is-expanded'));
-
-      // Si la tarjeta clicada no estaba expandida, la expande
+      
+      // Primero, cerramos todas las tarjetas para asegurar que solo una esté abierta.
+      featureCards.forEach(otherCard => {
+        otherCard.classList.remove('is-expanded');
+      });
+      
+      // Si la tarjeta en la que se hizo clic no estaba expandida, la expandimos.
       if (!isCurrentlyExpanded) {
         card.classList.add('is-expanded');
       }
     });
   });
-  });
+});
