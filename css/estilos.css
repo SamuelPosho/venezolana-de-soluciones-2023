@@ -1,25 +1,19 @@
 :root {
-  --marca: #4a4a4a;           /* color de marca / texto principal */
-  --acento: #d1de3f;          /* color acento (amarillo/verdoso) */
-  --fondo: #e6e6e8;           /* fondo de la página (más oscuro para menos monotonía) */
-  --muted: #777;              /* texto secundario */
-  --superficie: #fff;         /* color de superficies / tarjetas */
-  --borde: #eee;              /* color de bordes */
+  --marca: #4a4a4a;           
+  --acento: #d1de3f;          
+  --fondo: #e6e6e8;           
+  --muted: #777;             
+  --superficie: #fff;         
+  --borde: #eee;              
   --sombra: rgba(0, 0, 0, 0.1);
   --header-bg: rgba(255, 255, 255, 0.9);
-  /* Tokens adicionales: versiones y nombres semánticos */
   --color-brand-900: #2f2f2f;
   --color-accent-400: #e8ef86;
   --bg-100: #f6f6f7;
-  --bg-200: #e6e6e8; /* coincide con --fondo (tono ligeramente más oscuro) */
-  --surface-100: #ffffff; /* coincide con --superficie */
-  /* Sombra / elevación */
   --bg-200: #e6e6e8;
   --surface-100: #ffffff;
   --shadow-1: 0 4px 12px rgba(0,0,0,0.06);
   --shadow-2: 0 10px 30px rgba(0,0,0,0.08);
-  /* Dimensiones y radio */
-  /* Espaciado (sistema simple) */
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -35,71 +29,60 @@
   --fs-sm:  0.9rem;
   --leading-loose: 1.75;
   --leading-normal: 1.45;
+
   --anim-fast: 180ms;
   --anim-medium: 280ms;
   --anim-slow: 420ms;
+
+  --header-height-desktop: 72px;
+  --header-height-mobile: 64px;
 }
 * { 
   box-sizing: border-box;
 }
 body {
-  /* Modelo de Caja */
-  /* Nuestro equipo decidió establecer el margen en 0 para eliminar los espacios normales del navegador. */
   margin: 0;
-  /* Se ocultó el desbordamiento en el eje X para prevenir barras de desplazamiento horizontales inesperadas. */
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   color: var(--marca);
-  /* Visual: usamos la variable semántica --fondo para el fondo de página
-     y mantenemos el patrón SVG como capa superior para textura ligera */
   background-color: var(--fondo);
-  /* El equipo añadió un patrón SVG sutil como fondo para darle una textura visual única al sitio. */
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1de3f' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  /* El equipo agregó un padding superior para compensar la altura del encabezado fijo y evitar que el contenido quede oculto. */
   padding-top: 72px;
+  font-size: 16px;
 }
 h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 html {
-  /* Se definió un desplazamiento suave para mejorar la experiencia al navegar con anclas. */
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
   overflow-x: hidden;
 }
 .container { 
-  /* El equipo implementó esta clase para centrar el contenido y limitar su ancho, mejorando la legibilidad en pantallas grandes. */
   max-width: var(--max-ancho);
   margin: 0 auto;
   padding: 1rem;
 }
 .site-header {
-  /* Posicionamiento fijo para mantener el header visible al hacer scroll */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 72px;
   z-index: 1100;
-  /* Visual: El equipo aplicó un fondo con transparencia y un filtro de desenfoque para un efecto moderno. */
   background: var(--header-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borde);
 }
 .site-header .container { 
-  /* Se usó Flexbox para alinear verticalmente el logo y la navegación de manera sencilla. */
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 .brand {
-  /* Tipografía y Visual */
-  /* El equipo se aseguró de que el logo sea un enlace claro y sin decoración de texto. */
   font-weight: 700;
   color: var(--marca);
   text-decoration: none;
-  /* Animación */
   transition: opacity 0.3s ease;
 }
 .logo {
@@ -108,11 +91,9 @@ html {
   vertical-align: middle;
 }
 .menu-toggle {
-  /* Modelo de Caja: Este es el botón de hamburguesa para móviles. */
   display: block;
   padding: 0.5rem;
   margin-left: auto;
-  /* Visual */
   background: none;
   border: none;
   cursor: pointer;
@@ -136,34 +117,31 @@ html {
   left: 0;
   transition: transform 0.3s ease;
 }
-
-.menu-toggle .hamburger::before { top: -8px; }
+.menu-toggle .hamburger::before { 
+  top: -8px; 
+}
 .menu-toggle .hamburger::after { bottom: -8px; }
 
 .main-nav {
-  /* Maquetación: El equipo diseñó el menú móvil como un panel lateral. */
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   gap: 1rem;
-  /* Posicionamiento */
   position: fixed;
   top: 72px;
   right: 0;
   z-index: 1002;
-  /* Modelo de Caja */
   width: auto;
   height: auto;
   padding: 1rem;
-  /* Visual */
   visibility: hidden;
   background: var(--superficie);
   box-shadow: -5px 0 15px var(--sombra);
-  /* Animación */
   transform: translateX(100%);
   transition: transform 0.4s ease, visibility 0.4s ease;
 }
 .main-nav a {
+  font-family: var(--font-heading);
   color: var(--muted);
   text-decoration: none;
   display: block;
@@ -179,7 +157,6 @@ html {
     opacity 0.3s ease,
     transform 0.3s ease;
 }
-
 .main-nav a.active,
 .main-nav a:hover {
   color: var(--marca);
@@ -211,19 +188,15 @@ html {
 .nav-open .menu-toggle .hamburger::before {
   transform: translateY(8px) rotate(45deg);
 }
-
 .nav-open .menu-toggle .hamburger::after {
   transform: translateY(-8px) rotate(-45deg);
 }
-
 html.nav-open {
-  /* El equipo bloquea el scroll del cuerpo cuando el menú móvil está abierto para evitar movimientos de fondo. */
   overflow: hidden;
 }
 .hero {
   position: relative;
   padding: 5rem 0;
-  /* Hero con capa de degradado para mejorar legibilidad del texto sobre la imagen */
   background-image: linear-gradient(180deg, rgba(18,18,18,0.45), rgba(18,18,18,0.3)), url('../recursos/imagenes/hero-background.jpg');
   background-size: cover;
   background-position: center;
@@ -233,7 +206,6 @@ html.nav-open {
   animation: fadeIn 1s ease-out;
 }
 .hero::after {
-  /* El equipo añadió este pseudo-elemento para crear una transición suave entre la imagen del hero y el resto del contenido. */
   content: '';
   position: absolute;
   bottom: 0;
@@ -253,13 +225,11 @@ html.nav-open {
   margin: 0 auto 1.25rem auto;
   animation: slideInRight 0.8s ease-out; 
 }
-/* CTA principal dentro del hero */
 .hero-cta {
   display: inline-block;
 }
 
 .btn-primary {
-  /* El equipo diseñó este botón principal con un degradado y sombra para que sea el llamado a la acción más prominente. */
   display: inline-block;
   padding: 0.9rem 1.25rem;
   border-radius: calc(var(--radio) + 2px);
@@ -279,22 +249,27 @@ html.nav-open {
 .btn-primary:active {
   transform: translateY(-1px) scale(0.995);
 }
-/* Reducir movimiento si el usuario lo prefiere */
-/* El equipo incluyó esta media query para mejorar la accesibilidad, desactivando animaciones para usuarios que lo solicitan. */
 @media (prefers-reduced-motion: reduce) {
   .btn-primary, .hero, .features article {
     transition: none !important;
     animation: none !important;
     transform: none !important;
   }
-}
-.btn {
   display: inline-block;
-  /* Modelo de Caja: Este es el estilo para los botones secundarios. */
   padding: 0.6rem 1rem;
   border-radius: var(--radio);
   border: 1px solid var(--marca);
-  /* Tipografía y Visual */
+  background: var(--marca);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--marca);
   background: var(--marca);
   color: #fff;
   font-weight: 600;
@@ -308,48 +283,42 @@ html.nav-open {
   transform: scale(1.05);
 }
 .caracteristicas {
-  /* El equipo usó CSS Grid para crear una cuadrícula flexible que se adapta de 1 a 3 columnas. */
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
   padding: 3rem 0;
 }
-.caracteristicas article { /* Apuntamos directamente al artículo */
+.caracteristicas article {
   display: flex;
   flex-direction: column;
-  /* Modelo de Caja */
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   overflow: hidden;
-  position: relative; /* Necesario para un contexto de apilamiento adecuado si añadimos efectos más complejos */
-  /* Visual: El equipo definió un estilo base consistente para todas las tarjetas. */
+  position: relative;
   background-color: var(--superficie);
   border-bottom: 4px solid var(--acento);
   transition: transform var(--anim-medium) ease, box-shadow var(--anim-medium) ease;
-}.caracteristicas article.is-expanded { /* Aplicamos un efecto visual cuando la tarjeta está expandida. */
+}.caracteristicas article.is-expanded {
   transform: translateY(-8px);
   box-shadow: var(--shadow-1);
 }
 .caracteristicas article h2 {
   padding: 0 1.5rem;
-  margin-top: 1rem; /* Añadimos espacio sobre el título. */
-  margin-bottom: 0.5rem; /* Espacio entre el título y la descripción. */
+  margin-top: 1rem; 
+  margin-bottom: 0.5rem; 
 }
-/* Nuevos estilos para la descripción plegable */
 .caracteristicas article .caracteristica-card-description {
-  /* El equipo oculta la descripción por defecto usando max-height: 0 para poder animar su aparición. */
-  max-height: 0; /* Ocultamos inicialmente el contenido */
+  max-height: 0; 
   overflow: hidden;
-  padding: 0 1.5rem; /* Aplicamos relleno horizontal */
+  padding: 0 1.5rem; 
   transition: max-height var(--anim-medium) ease-out, padding-bottom var(--anim-medium) ease-out;
 }
 .caracteristicas article.is-expanded .caracteristica-card-description {
-  /* Al expandirse, el equipo definió una altura máxima suficiente para mostrar todo el texto. */
-  max-height: 200px; /* Un valor lo suficientemente grande para contener la descripción más larga */
-  padding-bottom: 1.5rem; /* Añadimos relleno inferior cuando se expande */
+  max-height: 200px;
+  padding-bottom: 1.5rem;
 }
 .caracteristicas article .caracteristica-card-description p {
-  margin: 0; /* Eliminamos los márgenes de párrafo por defecto */
+  margin: 0; 
   color: var(--muted);
   font-size: var(--fs-sm);
 }
@@ -357,6 +326,7 @@ html.nav-open {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: var(--radio);
   margin-bottom: 1.5rem;
 }
 .tarjeta-imagen {
@@ -364,14 +334,12 @@ html.nav-open {
 }
 .tarjeta-imagen--contenida {
   display: block;
-  /* Modelo de Caja */
   width: 100%;
-  height: 250px;          /* igual altura que .card-image para la consistencia */
+  height: 250px;
   margin-bottom: 1.5rem;
   border-radius: 6px;
-  /* Visual */
-  object-fit: cover;      /* cubre la caja y mantiene aspecto consistente */
-  object-position: center center; /* centramos el foco de la imagen */
+  object-fit: cover;
+  object-position: center center;
   background-color: var(--bg-100);
 }
 
@@ -398,7 +366,6 @@ html.nav-open {
 }
 
 .site-footer {
-  /* El equipo diseñó un pie de página oscuro para crear un contraste y final visual claro. */
   margin-top: 2rem;
   padding: 1.5rem 0;
   background-color: var(--color-brand-900);
@@ -468,16 +435,14 @@ html.nav-open {
   margin-bottom: 2rem; 
 }
 .pagina-contacto label { 
-  display: block; /* El equipo hizo que las etiquetas fueran bloques para que se sitúen encima de cada campo. */
+  display: block; 
   margin-top: 1rem; 
 }
 .pagina-contacto input, .pagina-contacto textarea {
-  /* Box Model */
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--borde);
   border-radius: var(--radio);
-  /* Animación */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .pagina-contacto input:focus, .pagina-contacto textarea:focus {
@@ -518,18 +483,24 @@ html.nav-open {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-}
-.redes-sociales a {
-  /* Maquetación: El equipo diseñó los iconos de redes sociales como círculos uniformes. */
-  display: flex;
   align-items: center;
   justify-content: center;
-  /* Box Model */
   width: 40px;
   height: 40px;
   border: 1px solid var(--borde);
   border-radius: 50%;
-  /* Tipografía y Visual */
+  text-decoration: none;
+  color: var(--muted);
+  transition: all 0.3s ease;
+}
+.redes-sociales a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
   text-decoration: none;
   color: var(--muted);
   transition: all 0.3s ease;
@@ -539,7 +510,6 @@ html.nav-open {
   transition: color 0.3s ease;
 }
 .redes-sociales a:hover {
-  /* Al pasar el cursor, el color del enlace (y del ícono) cambiará */
   color: var(--acento);
   border-color: var(--acento);
   transform: translateY(-3px);
@@ -557,7 +527,7 @@ html.nav-open {
 }
 .rejilla-contacto .detalles-contacto {
   opacity: 0;
-  animation: fadeInUp 0.6s ease-out 0.2s forwards; /* Se anima un poco después del formulario */
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
 }
 .mission-vision-grid {
   display: grid;
@@ -567,19 +537,15 @@ html.nav-open {
 }
 .tarjeta-mision {
   padding: 2rem;
-  /* Modelo de Caja */
   border-radius: var(--radio);
   border-left: 5px solid var(--acento);
-  /* Visual */
   background-color: var(--superficie);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .tarjeta-vision {
   padding: 2rem;
-  /* Modelo de Caja */
   border-radius: var(--radio);
   border-left: 5px solid var(--acento);
-  /* Visual */
   background-color: var(--superficie);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -636,7 +602,6 @@ html.nav-open {
   margin: 0;
   color: var(--muted);
 }
-/* Retrasos de animación para los valores */
 .rejilla-valores .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
 .rejilla-valores .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
 .rejilla-valores .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
@@ -647,7 +612,7 @@ html.nav-open {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .acerca-de-texto {
-  padding-right: 2rem; /* separación respecto a la imagen en escritorio */
+  padding-right: 2rem;
 }
 .acerca-de-texto p {
   font-size: 1rem;
@@ -662,14 +627,13 @@ html.nav-open {
 .acerca-de-texto li { margin-bottom: 0.55rem; }
 
 @media (max-width: 699px) {
-  /* El equipo añadió estilos específicos para móviles para mejorar la legibilidad y el espaciado. */
   .acerca-de-texto {
-    padding-left: 1rem; /* margen interior para no pegar el texto al borde */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .acerca-de-texto p {
-    font-size: 1rem; /* mantiene legibilidad en móvil */
-    line-height: 1.9; /* mayor espacio entre líneas para facilitar la lectura */
+    font-size: 1rem;
+    line-height: 1.9;
   }
   .acerca-de-texto h2.section-title {
     font-size: 1.4rem;
@@ -689,7 +653,6 @@ html.nav-open {
 
 }
 @media (min-width: 700px) {
-  /* en pantallas grandes añadimos margen izquierdo para que el bloque no pegue al borde */
   .acerca-de-texto { padding-left: 0; }
 }
 .seccion-cta {
@@ -709,8 +672,6 @@ html.nav-open {
   max-width: 600px;
   margin: 0 auto 1.5rem auto;
 }
-/* El equipo aplica el hover solo a la imagen de las secciones "Por qué elegirnos" y "Nuestra Historia" */
-/* Nueva clase para alternar fondos de sección */
 .section-bg {
   background-color: var(--surface-100);
   padding-top: 2rem;
@@ -718,26 +679,21 @@ html.nav-open {
   border-radius: var(--radio);
 }
 .volver-arriba {
-  /* Posicionamiento */
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  /* Modelo de Caja */
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  /* Layout */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Tipografía y Visual */
   background-color: var(--marca);
   color: #fff;
   text-decoration: none;
   opacity: 0;
   visibility: hidden;
-  /* Animación */
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 .volver-arriba.is-visible {
@@ -749,7 +705,6 @@ html.nav-open {
   background-color: var(--acento);
 }
 .animate-on-scroll {
-  /* El equipo definió el estado inicial de los elementos a animar (ocultos y desplazados). */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -765,7 +720,6 @@ html.nav-open {
   opacity: 1;
   transform: translateX(0);
 }
-/* Cuando JavaScript añade la clase .is-visible, el equipo hace que el elemento aparezca suavemente. */
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0); 
@@ -794,14 +748,58 @@ html.nav-open {
   to { opacity: 1; transform: translateX(0); }
 }
 
+@media (max-width: 699px) {
+  .tarjeta-imagen--contenida { 
+    height: 180px; 
+  }
+  .acerca-de-texto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .acerca-de-texto p {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+  .acerca-de-texto h2.section-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .nuestros-servicios .servicios-contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  .nuestros-servicios .section-illustration {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+  .nuestros-servicios .lista-servicios {
+    margin-top: 1.5rem;
+  }
+  .site-header {
+    height: var(--header-height-mobile);
+  }
+  body {
+    padding-top: var(--header-height-mobile);
+  }
+  .main-nav {
+    top: var(--header-height-mobile);
+  }
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 @media (min-width: 700px) {
-  /* El equipo ocultó el botón de hamburguesa en escritorio, ya que la navegación es visible. */
+  .acerca-de-texto { 
+    padding-left: 0; 
+  }
   .menu-toggle {
     display: none !important;
   }
 
   .main-nav {
-    visibility: visible; /* Aseguramos que el menú sea visible en escritorio */
+    visibility: visible;
     display: flex;
     position: static;
     width: auto;
@@ -809,17 +807,17 @@ html.nav-open {
     background: none;
     backdrop-filter: none;
     margin-left: auto;
+    margin-right: auto;
     box-shadow: none;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
     padding: 0;
     opacity: 1;
     transform: none;
     transition: none;
-    /* El equipo se aseguró de que la navegación en escritorio sea horizontal y estática. */
   }
   .main-nav a {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0;
     border-radius: 0;
     color: var(--muted);
@@ -831,8 +829,6 @@ html.nav-open {
     position: relative;
   }
   .main-nav a::after {
-    /* Se añadió un subrayado animado para dar feedback visual en los enlaces de navegación. */
-    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -852,7 +848,6 @@ html.nav-open {
   }
 
   .hero {
-    /* El equipo activó el efecto de paralaje en el hero solo para la vista de escritorio. */
     background-attachment: fixed;
   }
 
@@ -896,28 +891,66 @@ html.nav-open {
     grid-template-columns: repeat(4, 1fr);
   }
   .rejilla-horarios {
-    /* En escritorio, las tarjetas se ven mejor en una fila */
     grid-template-columns: repeat(3, 1fr);
   }
   .seccion-historia .acerca-de-imagen {
     order: 0;
   }
+  .process-steps { 
+    grid-template-columns: repeat(4, 1fr); 
+  }
+  .cta-inner {
+    flex-direction: row; 
+    justify-content: space-between;
+  }
+  .acerca-de.seccion-elegirnos {
+    gap: 3rem;
+  }
+  .nuestros-servicios .servicios-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 2rem;
+    align-items: center;
+  }
+  .nuestros-servicios .lista-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nuestros-servicios .section-illustration {
+    justify-self: end;
+    align-self: center;
+    display: block;
+  }
+  .nuestros-servicios .section-illustration img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.32s ease, filter 0.32s ease;
+  }
+  .nuestros-servicios .section-illustration img:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 10px 24px rgba(0,0,0,0.08));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .btn-primary, .hero, .features article {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
   * {
     animation: none !important;
     transition: none !important;
   }
 }
 :root {
-  /* Valores responsivos para la altura del header (útiles para JS o estilos posteriores) */
   --header-height-desktop: 72px;
   --header-height-mobile: 64px;
 }
-/* se ajusto la altura del encabezado y el padding del body para pantallas más pequeñas. */
-/* Ajustes para pantallas pequeñas: reducimos la altura del header y
-   actualizamos el padding superior del body y la posición del menú */
 @media (max-width: 699px) {
   .site-header {
     height: var(--header-height-mobile);
@@ -934,7 +967,6 @@ html.nav-open {
   }
 }
 :focus {
-  /* El equipo definió un estilo de foco claro y consistente para mejorar la accesibilidad del sitio. */
   outline: 3px solid var(--acento);
   outline-offset: 3px;
 }
@@ -962,10 +994,9 @@ body {
 }
 @media (min-width: 700px) {
   .acerca-de.seccion-elegirnos {
-    gap: 3rem; /* más espacio entre columnas para mejorar el margen visual */
+    gap: 3rem;
   }
 }
-/* Estilos para listas en .about-text */
 .acerca-de-texto ul {
   list-style: disc;
   padding-left: 1.2rem;
@@ -975,16 +1006,13 @@ body {
 .acerca-de-texto ul li {
   margin-bottom: 0.75rem;
 }
-/* Interacciones y decoraciones para secciones inferiores */
-/* El equipo decidió que las ilustraciones de sección fueran visibles por defecto y se gestionaran por sección. */
 .section-illustration {
-  /* Por defecto mostramos ilustraciones algunas se ocultaban en móvil antes pero ahora permitimos que se muestren cuando sea necesario y se controle por secciones específicas*/
   display: block;
 }
 .section-illustration img {
   display: block;
-  width: 100%;          /* responsive por defecto */
-  max-width: 360px;     /* limitar anchura en escritorio */
+  width: 100%;
+  max-width: 360px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -995,7 +1023,6 @@ body {
   gap: 1rem;
 }
 .nuestros-servicios .elemento-servicio {
-  /* El equipo diseñó las tarjetas de servicio con un borde izquierdo de acento para darles jerarquía. */
   background: var(--superficie);
   border: 1px solid var(--borde);
   padding: 1rem;
@@ -1012,10 +1039,9 @@ body {
 }
 
 @media (min-width: 700px) {
-  /* En escritorio, el equipo organizó la sección de servicios en una cuadrícula de dos columnas para un mejor aprovechamiento del espacio. */
   .nuestros-servicios .servicios-contenedor {
     display: grid;
-    grid-template-columns: 1fr 360px; /* lista + ilustración */
+    grid-template-columns: 1fr 360px;
     gap: 2rem;
     align-items: center;
   }
@@ -1027,7 +1053,6 @@ body {
   .nuestros-servicios .section-illustration {
     justify-self: end;
     align-self: center;
-    /* Aseguramos que la ilustración se muestre también en móvil para esta sección */
     display: block;
   }
   .nuestros-servicios .section-illustration img {
@@ -1055,7 +1080,6 @@ body {
   gap: 1rem;
 }
 .tarjeta-horario {
-  /* El equipo diseñó las tarjetas de horario con un estilo limpio y un borde superior de acento. */
   background: var(--superficie);
   border: 1px solid var(--borde);
   padding: 0.8rem;
@@ -1085,11 +1109,10 @@ body {
   margin: 0;
   color: var(--muted);
 }
-/* Estilos para la imagen de contacto debajo de los horarios */
 .contact-image-container {
   margin-top: 2rem;
   border-radius: var(--radio);
-  overflow: hidden; /* Asegura que la imagen respete el border-radius */
+  overflow: hidden;
   box-shadow: var(--shadow-1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1098,7 +1121,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radio); /* Aplica border-radius a la imagen misma */
+  border-radius: var(--radio);
   transition: transform 0.3s ease;
 }
 .contact-image-container:hover {
@@ -1107,4 +1130,60 @@ body {
 }
 .contact-image-container:hover img {
   transform: scale(1.03);
+}
+.section-group-2 {
+  background-color: var(--superficie);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+}
+.manual-content { padding: 2rem 0; }
+.manual-content h2 { 
+    border-bottom: 2px solid var(--acento); 
+    padding-bottom: 0.5rem; 
+    margin-top: 2rem; 
+}
+.manual-content h3 { 
+    margin-top: 1.5rem; 
+}
+.manual-content h4 {
+    margin-top: 1.5rem;
+}
+.manual-content ul { 
+    list-style: disc; 
+    padding-left: 1.5rem; 
+}
+.manual-content li { 
+    margin-bottom: 0.5rem; 
+}
+.manual-content code { 
+    background-color: var(--fondo); 
+    padding: 0.2rem 0.4rem; 
+    border-radius: 4px; 
+    font-family: monospace; 
+}
+.manual-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radio);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-1);
+  border: 2px solid var(--marca);
+}
+.manual-section-part {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.manual-section-part .manual-image {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+.manual-section-part .manual-text {
+  flex-grow: 1;
+}
+.manual-text > *:first-child {
+  margin-top: 0;
 }

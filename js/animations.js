@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // elegimos los elementos que deben ser animados al hacer scroll.
+  // se eligen los elementos que deben ser animados al hacer scroll.
   const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
   if (!elementsToAnimate.length) return;
-  // Utilizamos la API IntersectionObserver por su eficiencia. Permite ejecutar
-  // una función cuando un elemento entra en el area visible.
+  // Se utilizo la API IntersectionObserver ya que es una manera muy eficaz para lo que necesitamos
+  // la cual es una funcion que ocurre cuando un elemento entra en el area visible.
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    // Configuramos el observador para que se active cuando al menos el 10% del elemento sea visible.
+    // aqui se configuró el observador para que se active cuando al menos el 10% del elemento sea visible.
     threshold: 0.1
   });
   elementsToAnimate.forEach(element => {
