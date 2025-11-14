@@ -228,7 +228,6 @@ html.nav-open {
 .hero-cta {
   display: inline-block;
 }
-
 .btn-primary {
   display: inline-block;
   padding: 0.9rem 1.25rem;
@@ -255,15 +254,6 @@ html.nav-open {
     animation: none !important;
     transform: none !important;
   }
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radio);
-  border: 1px solid var(--marca);
-  background: var(--marca);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .btn {
   display: inline-block;
@@ -342,7 +332,6 @@ html.nav-open {
   object-position: center center;
   background-color: var(--bg-100);
 }
-
 @media (max-width: 699px) {
   .tarjeta-imagen--contenida { 
     height: 180px; }
@@ -477,21 +466,12 @@ html.nav-open {
   margin-top: 1.5rem;
 }
 .redes-sociales ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--borde);
-  border-radius: 50%;
-  text-decoration: none;
-  color: var(--muted);
-  transition: all 0.3s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .redes-sociales a {
   display: flex;
@@ -625,7 +605,6 @@ html.nav-open {
   margin-bottom: 1rem;
 }
 .acerca-de-texto li { margin-bottom: 0.55rem; }
-
 @media (max-width: 699px) {
   .acerca-de-texto {
     padding-left: 1rem;
@@ -789,9 +768,9 @@ html.nav-open {
     width: 40px;
   }
 }
-
 @media (min-width: 700px) {
-  .acerca-de-texto { 
+  .acerca-de-texto 
+  { 
     padding-left: 0; 
   }
   .menu-toggle {
