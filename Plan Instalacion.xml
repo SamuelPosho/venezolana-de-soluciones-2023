@@ -39,7 +39,7 @@
     <MoveCompletedEndsForward>0</MoveCompletedEndsForward>
     <BaselineForEarnedValue>0</BaselineForEarnedValue>
     <AutoAddNewResourcesAndTasks>1</AutoAddNewResourcesAndTasks>
-    <CurrentDate>2026-11-02T03:28:49</CurrentDate>
+    <CurrentDate>2026-11-02T03:50:23</CurrentDate>
     <MicrosoftProjectServerURL>1</MicrosoftProjectServerURL>
     <Autolink>1</Autolink>
     <NewTaskStartDate>0</NewTaskStartDate>
@@ -734,7 +734,7 @@
         <Task>
             <UID>15</UID>
             <ID>15</ID>
-            <Name>3.1 Copia de archivos del sistema al directorio del servidor</Name>
+            <Name>3.1 Copia de archivos del sistema al directorio del servidor local</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
