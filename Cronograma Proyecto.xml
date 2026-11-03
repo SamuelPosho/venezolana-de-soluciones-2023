@@ -181,7 +181,7 @@
         <Task>
             <UID>2</UID>
             <ID>2</ID>
-            <Name>I: Análisis (RUP: Inicio)</Name>
+            <Name>I: Inicio</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
@@ -191,10 +191,10 @@
             <OutlineLevel>2</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-02-09T08:00:00</Start>
-            <Finish>2026-02-27T17:00:00</Finish>
-            <Duration>PT120H0M0S</Duration>
+            <Finish>2026-03-06T17:00:00</Finish>
+            <Duration>PT160H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
-            <Work>PT224H0M0S</Work>
+            <Work>PT328H0M0S</Work>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
             <Recurring>0</Recurring>
@@ -207,7 +207,7 @@
             <IsSubprojectReadOnly>0</IsSubprojectReadOnly>
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <RemainingDuration>PT120H0M0S</RemainingDuration>
+            <RemainingDuration>PT160H0M0S</RemainingDuration>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
             <LevelingCanSplit>0</LevelingCanSplit>
@@ -381,53 +381,15 @@
             </PredecessorLink>
         </Task>
         <Task>
-            <UID>7</UID>
-            <ID>7</ID>
-            <Name>II: Factibilidad (RUP: Inicio)</Name>
-            <Active>1</Active>
-            <Manual>0</Manual>
-            <Type>0</Type>
-            <IsNull>0</IsNull>
-            <WBS>1.2</WBS>
-            <OutlineNumber>1.2</OutlineNumber>
-            <OutlineLevel>2</OutlineLevel>
-            <Priority>500</Priority>
-            <Start>2026-03-02T08:00:00</Start>
-            <Finish>2026-03-06T17:00:00</Finish>
-            <Duration>PT40H0M0S</Duration>
-            <DurationFormat>7</DurationFormat>
-            <Work>PT104H0M0S</Work>
-            <ResumeValid>0</ResumeValid>
-            <EffortDriven>0</EffortDriven>
-            <Recurring>0</Recurring>
-            <OverAllocated>0</OverAllocated>
-            <Estimated>0</Estimated>
-            <Milestone>0</Milestone>
-            <Summary>1</Summary>
-            <Critical>0</Critical>
-            <IsSubproject>0</IsSubproject>
-            <IsSubprojectReadOnly>0</IsSubprojectReadOnly>
-            <ExternalTask>0</ExternalTask>
-            <FixedCostAccrual>3</FixedCostAccrual>
-            <RemainingDuration>PT40H0M0S</RemainingDuration>
-            <CalendarUID>-1</CalendarUID>
-            <LevelAssignments>0</LevelAssignments>
-            <LevelingCanSplit>0</LevelingCanSplit>
-            <IgnoreResourceCalendar>0</IgnoreResourceCalendar>
-            <HideBar>0</HideBar>
-            <Rollup>0</Rollup>
-            <EarnedValueMethod>0</EarnedValueMethod>
-        </Task>
-        <Task>
             <UID>8</UID>
-            <ID>8</ID>
-            <Name>2.1 Estudio de factibilidad</Name>
+            <ID>7</ID>
+            <Name>1.2 Estudio de factibilidad</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1</WBS>
-            <OutlineNumber>1.2.1</OutlineNumber>
+            <WBS>1.1.2</WBS>
+            <OutlineNumber>1.1.2</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-02T08:00:00</Start>
@@ -458,14 +420,14 @@
         </Task>
         <Task>
             <UID>9</UID>
-            <ID>9</ID>
-            <Name>2.1.1 Factibilidad técnica</Name>
+            <ID>8</ID>
+            <Name>1.2.1 Factibilidad técnica</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.1</WBS>
-            <OutlineNumber>1.2.1.1</OutlineNumber>
+            <WBS>1.1.2.1</WBS>
+            <OutlineNumber>1.1.2.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-02T08:00:00</Start>
@@ -503,14 +465,14 @@
         </Task>
         <Task>
             <UID>10</UID>
-            <ID>10</ID>
-            <Name>2.1.2 Factibilidad económica</Name>
+            <ID>9</ID>
+            <Name>1.2.2 Factibilidad económica</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.2</WBS>
-            <OutlineNumber>1.2.1.2</OutlineNumber>
+            <WBS>1.1.2.2</WBS>
+            <OutlineNumber>1.1.2.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-02T08:00:00</Start>
@@ -548,14 +510,14 @@
         </Task>
         <Task>
             <UID>11</UID>
-            <ID>11</ID>
-            <Name>2.1.3 Factibilidad operativa</Name>
+            <ID>10</ID>
+            <Name>1.2.3 Factibilidad operativa</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.3</WBS>
-            <OutlineNumber>1.2.1.3</OutlineNumber>
+            <WBS>1.1.2.3</WBS>
+            <OutlineNumber>1.1.2.3</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-02T08:00:00</Start>
@@ -593,14 +555,14 @@
         </Task>
         <Task>
             <UID>12</UID>
-            <ID>12</ID>
-            <Name>2.1.4 Análisis de riesgos y alternativas</Name>
+            <ID>11</ID>
+            <Name>1.2.4 Análisis de riesgos y alternativas</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.4</WBS>
-            <OutlineNumber>1.2.1.4</OutlineNumber>
+            <WBS>1.1.2.4</WBS>
+            <OutlineNumber>1.1.2.4</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-05T08:00:00</Start>
@@ -638,14 +600,14 @@
         </Task>
         <Task>
             <UID>13</UID>
-            <ID>13</ID>
-            <Name>2.1.5 Informe y conclusiones de factibilidad</Name>
+            <ID>12</ID>
+            <Name>1.2.5 Informe y conclusiones de factibilidad</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.5</WBS>
-            <OutlineNumber>1.2.1.5</OutlineNumber>
+            <WBS>1.1.2.5</WBS>
+            <OutlineNumber>1.1.2.5</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-06T08:00:00</Start>
@@ -683,14 +645,14 @@
         </Task>
         <Task>
             <UID>14</UID>
-            <ID>14</ID>
+            <ID>13</ID>
             <Name>Hito 2: Factibilidad aprobada</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.2.1.6</WBS>
-            <OutlineNumber>1.2.1.6</OutlineNumber>
+            <WBS>1.1.2.6</WBS>
+            <OutlineNumber>1.1.2.6</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-06T17:00:00</Start>
@@ -726,14 +688,14 @@
         </Task>
         <Task>
             <UID>15</UID>
-            <ID>15</ID>
-            <Name>III: Diseño y modelado (RUP: Elaboración)</Name>
+            <ID>14</ID>
+            <Name>II: Elaboración</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3</WBS>
-            <OutlineNumber>1.3</OutlineNumber>
+            <WBS>1.2</WBS>
+            <OutlineNumber>1.2</OutlineNumber>
             <OutlineLevel>2</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-09T08:00:00</Start>
@@ -764,14 +726,14 @@
         </Task>
         <Task>
             <UID>16</UID>
-            <ID>16</ID>
-            <Name>3.1 Modelado del sistema</Name>
+            <ID>15</ID>
+            <Name>2.1 Modelado del sistema</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.1</WBS>
-            <OutlineNumber>1.3.1</OutlineNumber>
+            <WBS>1.2.1</WBS>
+            <OutlineNumber>1.2.1</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-09T08:00:00</Start>
@@ -802,14 +764,14 @@
         </Task>
         <Task>
             <UID>17</UID>
-            <ID>17</ID>
-            <Name>3.1.1 Casos de uso</Name>
+            <ID>16</ID>
+            <Name>2.1.1 Casos de uso</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.1.1</WBS>
-            <OutlineNumber>1.3.1.1</OutlineNumber>
+            <WBS>1.2.1.1</WBS>
+            <OutlineNumber>1.2.1.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-09T08:00:00</Start>
@@ -847,14 +809,14 @@
         </Task>
         <Task>
             <UID>18</UID>
-            <ID>18</ID>
-            <Name>3.1.2 Modelo de datos</Name>
+            <ID>17</ID>
+            <Name>2.1.2 Modelo de datos</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.1.2</WBS>
-            <OutlineNumber>1.3.1.2</OutlineNumber>
+            <WBS>1.2.1.2</WBS>
+            <OutlineNumber>1.2.1.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-03-23T08:00:00</Start>
@@ -892,14 +854,14 @@
         </Task>
         <Task>
             <UID>19</UID>
-            <ID>19</ID>
-            <Name>3.2 Diseño de interfaz</Name>
+            <ID>18</ID>
+            <Name>2.2 Diseño de interfaz</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.2</WBS>
-            <OutlineNumber>1.3.2</OutlineNumber>
+            <WBS>1.2.2</WBS>
+            <OutlineNumber>1.2.2</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-06T08:00:00</Start>
@@ -930,14 +892,14 @@
         </Task>
         <Task>
             <UID>20</UID>
-            <ID>20</ID>
-            <Name>3.2.1 Diseño lógico</Name>
+            <ID>19</ID>
+            <Name>2.2.1 Diseño lógico</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.2.1</WBS>
-            <OutlineNumber>1.3.2.1</OutlineNumber>
+            <WBS>1.2.2.1</WBS>
+            <OutlineNumber>1.2.2.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-06T08:00:00</Start>
@@ -975,14 +937,14 @@
         </Task>
         <Task>
             <UID>21</UID>
-            <ID>21</ID>
+            <ID>20</ID>
             <Name>Hito 3: Diseño del sistema aprobado</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.3.2.2</WBS>
-            <OutlineNumber>1.3.2.2</OutlineNumber>
+            <WBS>1.2.2.2</WBS>
+            <OutlineNumber>1.2.2.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-17T17:00:00</Start>
@@ -1018,14 +980,14 @@
         </Task>
         <Task>
             <UID>22</UID>
-            <ID>22</ID>
-            <Name>IV: Desarrollo e implementación (RUP: Construcción)</Name>
+            <ID>21</ID>
+            <Name>III: Construcción</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4</WBS>
-            <OutlineNumber>1.4</OutlineNumber>
+            <WBS>1.3</WBS>
+            <OutlineNumber>1.3</OutlineNumber>
             <OutlineLevel>2</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-20T08:00:00</Start>
@@ -1056,14 +1018,14 @@
         </Task>
         <Task>
             <UID>23</UID>
-            <ID>23</ID>
-            <Name>4.1 Configuración del entorno</Name>
+            <ID>22</ID>
+            <Name>3.1 Configuración del entorno</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.1</WBS>
-            <OutlineNumber>1.4.1</OutlineNumber>
+            <WBS>1.3.1</WBS>
+            <OutlineNumber>1.3.1</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-20T08:00:00</Start>
@@ -1094,14 +1056,14 @@
         </Task>
         <Task>
             <UID>24</UID>
-            <ID>24</ID>
-            <Name>4.1.1 Configuración del entorno de desarrollo</Name>
+            <ID>23</ID>
+            <Name>3.1.1 Configuración del entorno de desarrollo</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.1.1</WBS>
-            <OutlineNumber>1.4.1.1</OutlineNumber>
+            <WBS>1.3.1.1</WBS>
+            <OutlineNumber>1.3.1.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-20T08:00:00</Start>
@@ -1139,14 +1101,14 @@
         </Task>
         <Task>
             <UID>25</UID>
-            <ID>25</ID>
-            <Name>4.1.2 Módulo de inicio de sesión</Name>
+            <ID>24</ID>
+            <Name>3.1.2 Módulo de inicio de sesión</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.1.2</WBS>
-            <OutlineNumber>1.4.1.2</OutlineNumber>
+            <WBS>1.3.1.2</WBS>
+            <OutlineNumber>1.3.1.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-04-27T08:00:00</Start>
@@ -1184,14 +1146,14 @@
         </Task>
         <Task>
             <UID>26</UID>
-            <ID>26</ID>
+            <ID>25</ID>
             <Name>Hito 4: Entorno de desarrollo y módulo de acceso listos</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.1.3</WBS>
-            <OutlineNumber>1.4.1.3</OutlineNumber>
+            <WBS>1.3.1.3</WBS>
+            <OutlineNumber>1.3.1.3</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-05-08T17:00:00</Start>
@@ -1227,14 +1189,14 @@
         </Task>
         <Task>
             <UID>27</UID>
-            <ID>27</ID>
-            <Name>4.2 Módulos del sistema</Name>
+            <ID>26</ID>
+            <Name>3.2 Módulos del sistema</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2</WBS>
-            <OutlineNumber>1.4.2</OutlineNumber>
+            <WBS>1.3.2</WBS>
+            <OutlineNumber>1.3.2</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-05-11T08:00:00</Start>
@@ -1265,14 +1227,14 @@
         </Task>
         <Task>
             <UID>28</UID>
-            <ID>28</ID>
-            <Name>4.2.1 Módulo de marcación</Name>
+            <ID>27</ID>
+            <Name>3.2.1 Módulo de marcación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.1</WBS>
-            <OutlineNumber>1.4.2.1</OutlineNumber>
+            <WBS>1.3.2.1</WBS>
+            <OutlineNumber>1.3.2.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-05-11T08:00:00</Start>
@@ -1310,14 +1272,14 @@
         </Task>
         <Task>
             <UID>29</UID>
-            <ID>29</ID>
-            <Name>4.2.2 Módulo de empleados</Name>
+            <ID>28</ID>
+            <Name>3.2.2 Módulo de empleados</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.2</WBS>
-            <OutlineNumber>1.4.2.2</OutlineNumber>
+            <WBS>1.3.2.2</WBS>
+            <OutlineNumber>1.3.2.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-06-08T08:00:00</Start>
@@ -1355,14 +1317,14 @@
         </Task>
         <Task>
             <UID>30</UID>
-            <ID>30</ID>
-            <Name>4.2.3 Módulo de asistencia</Name>
+            <ID>29</ID>
+            <Name>3.2.3 Módulo de asistencia</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.3</WBS>
-            <OutlineNumber>1.4.2.3</OutlineNumber>
+            <WBS>1.3.2.3</WBS>
+            <OutlineNumber>1.3.2.3</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-07-06T08:00:00</Start>
@@ -1400,14 +1362,14 @@
         </Task>
         <Task>
             <UID>31</UID>
-            <ID>31</ID>
-            <Name>4.2.4 Módulo de pagos</Name>
+            <ID>30</ID>
+            <Name>3.2.4 Módulo de pagos</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.4</WBS>
-            <OutlineNumber>1.4.2.4</OutlineNumber>
+            <WBS>1.3.2.4</WBS>
+            <OutlineNumber>1.3.2.4</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-05-11T08:00:00</Start>
@@ -1440,14 +1402,14 @@
         </Task>
         <Task>
             <UID>32</UID>
-            <ID>32</ID>
-            <Name>4.2.5 Módulo de conceptos</Name>
+            <ID>31</ID>
+            <Name>3.2.5 Módulo de conceptos</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.5</WBS>
-            <OutlineNumber>1.4.2.5</OutlineNumber>
+            <WBS>1.3.2.5</WBS>
+            <OutlineNumber>1.3.2.5</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-05-11T08:00:00</Start>
@@ -1480,14 +1442,14 @@
         </Task>
         <Task>
             <UID>33</UID>
-            <ID>33</ID>
-            <Name>4.2.6 Módulo de liquidaciones</Name>
+            <ID>32</ID>
+            <Name>3.2.6 Módulo de liquidaciones</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.6</WBS>
-            <OutlineNumber>1.4.2.6</OutlineNumber>
+            <WBS>1.3.2.6</WBS>
+            <OutlineNumber>1.3.2.6</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-06-15T08:00:00</Start>
@@ -1525,14 +1487,14 @@
         </Task>
         <Task>
             <UID>34</UID>
-            <ID>34</ID>
-            <Name>4.2.7 Módulo de reportes</Name>
+            <ID>33</ID>
+            <Name>3.2.7 Módulo de reportes</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.4.2.7</WBS>
-            <OutlineNumber>1.4.2.7</OutlineNumber>
+            <WBS>1.3.2.7</WBS>
+            <OutlineNumber>1.3.2.7</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-08-17T08:00:00</Start>
@@ -1584,14 +1546,14 @@
         </Task>
         <Task>
             <UID>35</UID>
-            <ID>35</ID>
-            <Name>V: Pruebas, instalación e implantación y evaluación (RUP: Transición)</Name>
+            <ID>34</ID>
+            <Name>IV: Transición</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5</WBS>
-            <OutlineNumber>1.5</OutlineNumber>
+            <WBS>1.4</WBS>
+            <OutlineNumber>1.4</OutlineNumber>
             <OutlineLevel>2</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-09-02T08:00:00</Start>
@@ -1622,14 +1584,14 @@
         </Task>
         <Task>
             <UID>36</UID>
-            <ID>36</ID>
-            <Name>5.1 Pruebas</Name>
+            <ID>35</ID>
+            <Name>4.1 Pruebas</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.1</WBS>
-            <OutlineNumber>1.5.1</OutlineNumber>
+            <WBS>1.4.1</WBS>
+            <OutlineNumber>1.4.1</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-09-02T08:00:00</Start>
@@ -1660,14 +1622,14 @@
         </Task>
         <Task>
             <UID>37</UID>
-            <ID>37</ID>
-            <Name>5.1.1 Pruebas unitarias</Name>
+            <ID>36</ID>
+            <Name>4.1.1 Pruebas unitarias</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.1.1</WBS>
-            <OutlineNumber>1.5.1.1</OutlineNumber>
+            <WBS>1.4.1.1</WBS>
+            <OutlineNumber>1.4.1.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-09-02T08:00:00</Start>
@@ -1705,14 +1667,14 @@
         </Task>
         <Task>
             <UID>38</UID>
-            <ID>38</ID>
+            <ID>37</ID>
             <Name>Hito 5: Pruebas unitarias aprobadas</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.1.2</WBS>
-            <OutlineNumber>1.5.1.2</OutlineNumber>
+            <WBS>1.4.1.2</WBS>
+            <OutlineNumber>1.4.1.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-09-29T17:00:00</Start>
@@ -1748,14 +1710,14 @@
         </Task>
         <Task>
             <UID>39</UID>
-            <ID>39</ID>
-            <Name>5.2 Instalación</Name>
+            <ID>38</ID>
+            <Name>4.2 Instalación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2</WBS>
-            <OutlineNumber>1.5.2</OutlineNumber>
+            <WBS>1.4.2</WBS>
+            <OutlineNumber>1.4.2</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-01T08:00:00</Start>
@@ -1786,14 +1748,14 @@
         </Task>
         <Task>
             <UID>40</UID>
-            <ID>40</ID>
-            <Name>5.2.1 Preparación y verificación</Name>
+            <ID>39</ID>
+            <Name>4.2.1 Preparación y verificación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2.1</WBS>
-            <OutlineNumber>1.5.2.1</OutlineNumber>
+            <WBS>1.4.2.1</WBS>
+            <OutlineNumber>1.4.2.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-01T08:00:00</Start>
@@ -1831,14 +1793,14 @@
         </Task>
         <Task>
             <UID>41</UID>
-            <ID>41</ID>
-            <Name>5.2.2 Instalación de software base</Name>
+            <ID>40</ID>
+            <Name>4.2.2 Instalación de software base</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2.2</WBS>
-            <OutlineNumber>1.5.2.2</OutlineNumber>
+            <WBS>1.4.2.2</WBS>
+            <OutlineNumber>1.4.2.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-06T08:00:00</Start>
@@ -1876,14 +1838,14 @@
         </Task>
         <Task>
             <UID>42</UID>
-            <ID>42</ID>
-            <Name>5.2.3 Despliegue del sistema</Name>
+            <ID>41</ID>
+            <Name>4.2.3 Despliegue del sistema</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2.3</WBS>
-            <OutlineNumber>1.5.2.3</OutlineNumber>
+            <WBS>1.4.2.3</WBS>
+            <OutlineNumber>1.4.2.3</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-08T08:00:00</Start>
@@ -1921,14 +1883,14 @@
         </Task>
         <Task>
             <UID>43</UID>
-            <ID>43</ID>
-            <Name>5.2.4 Pruebas de configuración de la instalación</Name>
+            <ID>42</ID>
+            <Name>4.2.4 Pruebas de configuración de la instalación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2.4</WBS>
-            <OutlineNumber>1.5.2.4</OutlineNumber>
+            <WBS>1.4.2.4</WBS>
+            <OutlineNumber>1.4.2.4</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-14T08:00:00</Start>
@@ -1966,14 +1928,14 @@
         </Task>
         <Task>
             <UID>44</UID>
-            <ID>44</ID>
+            <ID>43</ID>
             <Name>Hito 6: Sistema instalado</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.2.5</WBS>
-            <OutlineNumber>1.5.2.5</OutlineNumber>
+            <WBS>1.4.2.5</WBS>
+            <OutlineNumber>1.4.2.5</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-23T17:00:00</Start>
@@ -2009,14 +1971,14 @@
         </Task>
         <Task>
             <UID>45</UID>
-            <ID>45</ID>
-            <Name>5.3 Implantación, aceptación y capacitación</Name>
+            <ID>44</ID>
+            <Name>4.3 Implantación, aceptación y capacitación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3</WBS>
-            <OutlineNumber>1.5.3</OutlineNumber>
+            <WBS>1.4.3</WBS>
+            <OutlineNumber>1.4.3</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-26T08:00:00</Start>
@@ -2047,14 +2009,14 @@
         </Task>
         <Task>
             <UID>46</UID>
-            <ID>46</ID>
-            <Name>5.3.1 Preparación del proyecto</Name>
+            <ID>45</ID>
+            <Name>4.3.1 Preparación del proyecto</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.1</WBS>
-            <OutlineNumber>1.5.3.1</OutlineNumber>
+            <WBS>1.4.3.1</WBS>
+            <OutlineNumber>1.4.3.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-26T08:00:00</Start>
@@ -2092,14 +2054,14 @@
         </Task>
         <Task>
             <UID>47</UID>
-            <ID>47</ID>
-            <Name>5.3.2 Acondicionamiento de instalaciones</Name>
+            <ID>46</ID>
+            <Name>4.3.2 Acondicionamiento de instalaciones</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.2</WBS>
-            <OutlineNumber>1.5.3.2</OutlineNumber>
+            <WBS>1.4.3.2</WBS>
+            <OutlineNumber>1.4.3.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-27T08:00:00</Start>
@@ -2137,14 +2099,14 @@
         </Task>
         <Task>
             <UID>48</UID>
-            <ID>48</ID>
-            <Name>5.3.3 Pruebas</Name>
+            <ID>47</ID>
+            <Name>4.3.3 Pruebas</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.3</WBS>
-            <OutlineNumber>1.5.3.3</OutlineNumber>
+            <WBS>1.4.3.3</WBS>
+            <OutlineNumber>1.4.3.3</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-27T08:00:00</Start>
@@ -2182,14 +2144,14 @@
         </Task>
         <Task>
             <UID>49</UID>
-            <ID>49</ID>
-            <Name>5.3.4 Capacitación del personal</Name>
+            <ID>48</ID>
+            <Name>4.3.4 Capacitación del personal</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.4</WBS>
-            <OutlineNumber>1.5.3.4</OutlineNumber>
+            <WBS>1.4.3.4</WBS>
+            <OutlineNumber>1.4.3.4</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-10-27T08:00:00</Start>
@@ -2227,14 +2189,14 @@
         </Task>
         <Task>
             <UID>50</UID>
-            <ID>50</ID>
+            <ID>49</ID>
             <Name>Hito 7: Pruebas y capacitación completadas</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.5</WBS>
-            <OutlineNumber>1.5.3.5</OutlineNumber>
+            <WBS>1.4.3.5</WBS>
+            <OutlineNumber>1.4.3.5</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-02T17:00:00</Start>
@@ -2270,14 +2232,14 @@
         </Task>
         <Task>
             <UID>51</UID>
-            <ID>51</ID>
-            <Name>5.3.5 Puesta en marcha</Name>
+            <ID>50</ID>
+            <Name>4.3.5 Puesta en marcha</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.6</WBS>
-            <OutlineNumber>1.5.3.6</OutlineNumber>
+            <WBS>1.4.3.6</WBS>
+            <OutlineNumber>1.4.3.6</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-03T08:00:00</Start>
@@ -2308,14 +2270,14 @@
         </Task>
         <Task>
             <UID>52</UID>
-            <ID>52</ID>
-            <Name>5.3.5.1 Operación paralela del sistema con el sistema manual (15 días)</Name>
+            <ID>51</ID>
+            <Name>4.3.5.1 Operación paralela del sistema con el sistema manual (15 días)</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.6.1</WBS>
-            <OutlineNumber>1.5.3.6.1</OutlineNumber>
+            <WBS>1.4.3.6.1</WBS>
+            <OutlineNumber>1.4.3.6.1</OutlineNumber>
             <OutlineLevel>5</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-03T08:00:00</Start>
@@ -2353,14 +2315,14 @@
         </Task>
         <Task>
             <UID>53</UID>
-            <ID>53</ID>
-            <Name>5.3.5.2 Análisis de resultados y corrección de errores</Name>
+            <ID>52</ID>
+            <Name>4.3.5.2 Análisis de resultados y corrección de errores</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.6.2</WBS>
-            <OutlineNumber>1.5.3.6.2</OutlineNumber>
+            <WBS>1.4.3.6.2</WBS>
+            <OutlineNumber>1.4.3.6.2</OutlineNumber>
             <OutlineLevel>5</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-24T08:00:00</Start>
@@ -2398,14 +2360,14 @@
         </Task>
         <Task>
             <UID>54</UID>
-            <ID>54</ID>
-            <Name>5.3.5.3 Arranque del sistema</Name>
+            <ID>53</ID>
+            <Name>4.3.5.3 Arranque del sistema</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.6.3</WBS>
-            <OutlineNumber>1.5.3.6.3</OutlineNumber>
+            <WBS>1.4.3.6.3</WBS>
+            <OutlineNumber>1.4.3.6.3</OutlineNumber>
             <OutlineLevel>5</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-25T08:00:00</Start>
@@ -2443,14 +2405,14 @@
         </Task>
         <Task>
             <UID>55</UID>
-            <ID>55</ID>
+            <ID>54</ID>
             <Name>Hito 8: Sistema en producción</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.3.6.4</WBS>
-            <OutlineNumber>1.5.3.6.4</OutlineNumber>
+            <WBS>1.4.3.6.4</WBS>
+            <OutlineNumber>1.4.3.6.4</OutlineNumber>
             <OutlineLevel>5</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-25T17:00:00</Start>
@@ -2486,14 +2448,14 @@
         </Task>
         <Task>
             <UID>56</UID>
-            <ID>56</ID>
-            <Name>5.4 Evaluación</Name>
+            <ID>55</ID>
+            <Name>4.4 Evaluación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.4</WBS>
-            <OutlineNumber>1.5.4</OutlineNumber>
+            <WBS>1.4.4</WBS>
+            <OutlineNumber>1.4.4</OutlineNumber>
             <OutlineLevel>3</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-26T08:00:00</Start>
@@ -2524,14 +2486,14 @@
         </Task>
         <Task>
             <UID>57</UID>
-            <ID>57</ID>
-            <Name>5.4.1 Evaluación</Name>
+            <ID>56</ID>
+            <Name>4.4.1 Evaluación</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.4.1</WBS>
-            <OutlineNumber>1.5.4.1</OutlineNumber>
+            <WBS>1.4.4.1</WBS>
+            <OutlineNumber>1.4.4.1</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-26T08:00:00</Start>
@@ -2569,14 +2531,14 @@
         </Task>
         <Task>
             <UID>58</UID>
-            <ID>58</ID>
+            <ID>57</ID>
             <Name>Hito 9: Fin del proyecto</Name>
             <Active>1</Active>
             <Manual>0</Manual>
             <Type>0</Type>
             <IsNull>0</IsNull>
-            <WBS>1.5.4.2</WBS>
-            <OutlineNumber>1.5.4.2</OutlineNumber>
+            <WBS>1.4.4.2</WBS>
+            <OutlineNumber>1.4.4.2</OutlineNumber>
             <OutlineLevel>4</OutlineLevel>
             <Priority>500</Priority>
             <Start>2026-11-27T17:00:00</Start>
