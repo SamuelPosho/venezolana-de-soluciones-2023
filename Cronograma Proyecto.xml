@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Project xmlns="http://schemas.microsoft.com/project">
     <SaveVersion>14</SaveVersion>
     <Name>project.xml</Name>
@@ -49,7 +49,7 @@
     <ActualsInSync>0</ActualsInSync>
     <RemoveFileProperties>0</RemoveFileProperties>
     <AdminProject>0</AdminProject>
-    <ExtendedAttributes/>
+    <ExtendedAttributes />
     <Calendars>
         <Calendar>
             <UID>1</UID>
@@ -1307,14 +1307,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-            <PredecessorLink>
-                <PredecessorUID>28</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-        </Task>
+            <PredecessorLink><PredecessorUID>26</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>30</UID>
             <ID>29</ID>
@@ -1352,14 +1345,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-            <PredecessorLink>
-                <PredecessorUID>29</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-        </Task>
+            <PredecessorLink><PredecessorUID>29</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>31</UID>
             <ID>30</ID>
@@ -1399,7 +1385,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-        </Task>
+        <PredecessorLink><PredecessorUID>30</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>32</UID>
             <ID>31</ID>
@@ -1439,7 +1425,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-        </Task>
+        <PredecessorLink><PredecessorUID>29</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>33</UID>
             <ID>32</ID>
@@ -1477,14 +1463,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-            <PredecessorLink>
-                <PredecessorUID>32</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-        </Task>
+            <PredecessorLink><PredecessorUID>31</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>34</UID>
             <ID>33</ID>
@@ -1522,28 +1501,7 @@
             <HideBar>0</HideBar>
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
-            <PredecessorLink>
-                <PredecessorUID>30</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-            <PredecessorLink>
-                <PredecessorUID>31</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-            <PredecessorLink>
-                <PredecessorUID>33</PredecessorUID>
-                <Type>1</Type>
-                <CrossProject>0</CrossProject>
-                <LinkLag>0</LinkLag>
-                <LagFormat>7</LagFormat>
-            </PredecessorLink>
-        </Task>
+            <PredecessorLink><PredecessorUID>33</PredecessorUID><Type>1</Type></PredecessorLink></Task>
         <Task>
             <UID>35</UID>
             <ID>34</ID>
@@ -1659,7 +1617,7 @@
             <EarnedValueMethod>0</EarnedValueMethod>
             <PredecessorLink>
                 <PredecessorUID>34</PredecessorUID>
-                <Type>3</Type>
+                <Type>1</Type>
                 <CrossProject>0</CrossProject>
                 <LinkLag>57600</LinkLag>
                 <LagFormat>7</LagFormat>
