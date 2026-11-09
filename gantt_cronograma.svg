@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2470" height="675" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.title { font: bold 18px Arial; }
+.subtitle { font: 11px Arial; fill: #666; }
+.task-text { font: 12px Arial; }
+.task-text-bold { font: bold 12px Arial; }
+.month-text { font: 10px Arial; text-anchor: middle; }
+</style></defs>
+
+<rect width="2470" height="675" fill="white"/>
+
+<text x="20" y="30" class="title">Cronograma del Proyecto (Diagrama de Gantt)</text>
+<text x="20" y="50" class="subtitle">Período: 09/02/2026 - 27/11/2026</text>
+
+<rect x="365.2" y="70" width="191.8" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="461.1" y="88" class="month-text">Feb 26</text>
+<rect x="557.0" y="70" width="212.3" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="663.2" y="88" class="month-text">Mar 26</text>
+<rect x="769.3" y="70" width="205.5" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="872.1" y="88" class="month-text">Apr 26</text>
+<rect x="974.8" y="70" width="212.3" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="1081.0" y="88" class="month-text">May 26</text>
+<rect x="1187.1" y="70" width="205.5" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="1289.9" y="88" class="month-text">Jun 26</text>
+<rect x="1392.6" y="70" width="212.3" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="1498.8" y="88" class="month-text">Jul 26</text>
+<rect x="1604.9" y="70" width="212.3" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="1711.1" y="88" class="month-text">Aug 26</text>
+<rect x="1817.3" y="70" width="205.5" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="1920.0" y="88" class="month-text">Sep 26</text>
+<rect x="2022.7" y="70" width="212.3" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="2128.9" y="88" class="month-text">Oct 26</text>
+<rect x="2235.1" y="70" width="184.9" height="25" fill="#d0d0d0" stroke="#888"/>
+<text x="2327.5" y="88" class="month-text">Nov 26</text>
+<line x1="420" y1="100" x2="2420" y2="100" stroke="#888" stroke-width="2"/>
+<line x1="365.2" y1="100" x2="365.2" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="557.0" y1="100" x2="557.0" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="769.3" y1="100" x2="769.3" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="974.8" y1="100" x2="974.8" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="1187.1" y1="100" x2="1187.1" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="1392.6" y1="100" x2="1392.6" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="1604.9" y1="100" x2="1604.9" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="1817.3" y1="100" x2="1817.3" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="2022.7" y1="100" x2="2022.7" y2="645" stroke="#ddd" stroke-width="1"/>
+<line x1="2235.1" y1="100" x2="2235.1" y2="645" stroke="#ddd" stroke-width="1"/>
+<text x="20" y="120" class="task-text-bold">Meta del Proyecto</text>
+<rect x="420.0" y="106" width="2000.0" height="20" fill="#1f4e78" stroke="#333" stroke-width="1"/>
+<text x="40" y="155" class="task-text-bold">I: Inicio</text>
+<rect x="420.0" y="141" width="178.1" height="17" fill="#4472c4" stroke="#333" stroke-width="1"/>
+<text x="60" y="190" class="task-text">1.1 Análisis de requerimientos</text>
+<rect x="420.0" y="176" width="130.1" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="225" class="task-text">1.2 Estudio de factibilidad</text>
+<rect x="563.8" y="211" width="34.2" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="40" y="260" class="task-text-bold">II: Elaboración</text>
+<rect x="611.8" y="246" width="274.0" height="17" fill="#4472c4" stroke="#333" stroke-width="1"/>
+<text x="60" y="295" class="task-text">2.1 Modelado del sistema</text>
+<rect x="611.8" y="281" width="178.1" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="330" class="task-text">2.2 Diseño de interfaz</text>
+<rect x="803.6" y="316" width="82.2" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="40" y="365" class="task-text-bold">III: Construcción</text>
+<rect x="899.5" y="351" width="1027.4" height="17" fill="#4472c4" stroke="#333" stroke-width="1"/>
+<text x="60" y="400" class="task-text">3.1 Configuración del entorno</text>
+<rect x="899.5" y="386" width="130.1" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="435" class="task-text">3.2 Módulos del sistema</text>
+<rect x="1043.3" y="421" width="883.6" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="40" y="470" class="task-text-bold">IV: Transición</text>
+<rect x="1824.1" y="456" width="595.9" height="17" fill="#4472c4" stroke="#333" stroke-width="1"/>
+<text x="60" y="505" class="task-text">4.1 Pruebas</text>
+<rect x="1824.1" y="491" width="191.8" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="540" class="task-text">4.2 Instalación</text>
+<rect x="2022.7" y="526" width="157.5" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="575" class="task-text">4.3 Implantación, aceptación y capacitación</text>
+<rect x="2194.0" y="561" width="212.3" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+<text x="60" y="610" class="task-text">4.4 Evaluación</text>
+<rect x="2406.3" y="596" width="13.7" height="14" fill="#70ad47" stroke="#333" stroke-width="1"/>
+</svg>
